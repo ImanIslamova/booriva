@@ -1,4 +1,8 @@
+import Nav from "./nav/nav";
+
 const HomePage = () =>{
-    return ''
+    return (
+        <Nav />
+    )
 }
 export default HomePage;

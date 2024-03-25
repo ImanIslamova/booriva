@@ -1,8 +1,9 @@
-import Nav from "./nav/nav";
+import BoorivaStore from "./BoorivaStore/BoorivaStore";
+
 
 const HomePage = () =>{
     return (
-        <Nav />
+        <BoorivaStore/>
     )
 }
 export default HomePage;

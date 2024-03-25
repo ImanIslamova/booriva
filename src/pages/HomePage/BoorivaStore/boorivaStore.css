@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "Sunday Best [rus by aLiNcE]";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/src/pages/HomePage/nav/fonts/sundaybestrusbyalince.otf);
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/src/pages/HomePage/nav/fonts/Montserrat-Regular.ttf);
+}
+.store_container{
+    max-width: 1042px;
+    margin: 0 auto;
+    padding-top: 56px;
+    display: flex;
+}
+
+.store__wrap{
+    display: flex;
+    align-items: flex-end;
+}
+
+.store__image{
+    width: 560px;
+    height: 643px;
+    background: url(/src/pages/HomePage/BoorivaStore/image/store.svg) center/cover;
+    position: relative;
+}
+
+@media (width: 1000px) {
+    .store__image{
+        width: 457px;
+        height: 643px;
+    }
+}
+@media (max-width: 768px) {
+    .store__image{
+        width: 362px;
+        height: 486px;
+    }
+}
+@media (max-width: 480px) {
+    .store__image{
+        width: 295px;
+        height: 417px;
+    }
+}
+.store__title{
+    max-width: 261px;
+    color: #1F1F1F;
+    font-family: "Sunday Best [rus by aLiNcE]";
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 103px;
+    padding-top: 109px;
+    text-align: right;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 280px;
+    z-index: 1;
+}
+@media (max-width: 1300px) {
+    .store__title{
+        left: 150px;
+    }
+}
+@media (max-width: 1200px) {
+    .store__title{
+        left: 100px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .store__title{
+        position: absolute;
+        top: 100px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+@media (max-width: 480px) {
+    .store__title{
+        font-size: 36px;
+        line-height: 68px;
+        position: absolute;
+        top: 100px;
+        right: 400px;
+        bottom: 0;
+        left: 0;
+    }
+}
+.store__text{
+    color: #1F1F1F;
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    padding-right: 9px;
+}
+@media (max-width: 480px) {
+    .store__text{
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.text-width{
+    max-width: 230px;
+    padding-left: 15px;
+    padding-top: 276px;
+}
+
+.store__simbol{
+    width: 60px;
+    height: 69px;
+    background: url(/src/pages/HomePage/BoorivaStore/image/Vector.svg) center/cover;
+    margin-left: 58px;
+    padding-top: 17px;
+}
+@media (max-width: 768px) {
+    .store__simbol{
+        display: none;
+    }
+}
+
+.padding{
+    margin-left: 58px;
+    margin-top: 17px;
+}
+@media (max-width: 480px) {
+    .store__description{
+        position: absolute;
+        top: 250px;
+        right: 0;
+        left: 250px;
+        bottom: 0;
+    }
+}
+
+@media (max-width: 370px) {
+    .store__description{
+        position: absolute;
+        top: 250px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+.space{
+    margin-top: 51px;
+    margin-left: 395px;
+}

@@ -1,6 +1,8 @@
 import Nav from "./nav/nav";
-import Category from "../../components/category/Category";
-import NewClothes from "../../components/category/categories/NewClothes";
+import Category from "./category/Category";
+import NewClothes from "./category/categories/NewClothes";
+import Insta from "./insta/Insta";
+import Footer from "./footer/Footer";
 
 const HomePage = () =>{
     return (
@@ -8,6 +10,8 @@ const HomePage = () =>{
             <Nav />
             <Category />
             <NewClothes />
+            <Insta />
+            <Footer />
         </div>
     )
 }

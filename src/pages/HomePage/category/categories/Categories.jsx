@@ -1,4 +1,4 @@
-import Button from "../../buttons/Button";
+import Button from "../../../../components/buttons/Button";
 
 const Categories = () => {
     return (

@@ -1,0 +1,50 @@
+.insta {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 60px;
+    flex: 0 0 33%;
+    margin-bottom: 60px;
+}
+
+.insta__item {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    justify-content: space-between;
+}
+
+.insta__title {
+    font-family: 'SundayBest';
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 103.25px;
+    text-align: left;
+    color: #1F1F1F;
+}
+
+.insta__minis {
+    display: flex;
+    align-items: flex-end;
+}
+.insta__minis--second {
+    align-items: flex-start;
+}
+
+.insta__text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: left;
+    max-width: 332px;
+    margin-top: 10px;
+}
+
+.insta__tag {
+    font-family: Montserrat;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 51.2px;
+    text-align: left;
+    color: #F40000;
+}

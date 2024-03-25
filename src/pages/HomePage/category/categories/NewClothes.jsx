@@ -1,7 +1,6 @@
-import Title from "../../title/Title";
-import Product from "../../product/Product";
-import Button from "../../buttons/Button";
-//import switshot from "../../../images/png/switshot.png";
+import Title from "../../../../components/title/Title";
+import Product from "../../../../components/product/Product";
+import Button from "../../../../components/buttons/Button";
 
 const NewClothes = () => {
     return (

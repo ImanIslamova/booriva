@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'SundayBest';
+    src: url(/public/fonts/sundaybestrusbyalince.otf);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(/public/fonts/Montserrat-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(/public/fonts/Montserrat-SemiBold.ttf);
+    font-weight: 600;
+}
+
+
+h1 {
+    font-family: 'SundayBest';
+}
+
+.wrapper {
+    max-width: 1440px;
+    padding: 0 150px;
+    margin: 0 auto;
+}
+
+.category {
+    padding-top: 120px;
+}
+
+.categories {
+    gap: 15px;
+    padding-bottom: 47px;
+}
+
+.categories__main-flex {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.categories__flex,
+.small-flex {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.block {
+    width: 100%;
+    height: 345px;
+    position: relative;
+}
+
+.block-small {
+    width: 48%;
+    height: 297px;
+    position: relative;
+}
+
+.t-shirts {
+    background: url(/public/images/png/tshirts.jpg) center;
+    background-size: cover;
+}
+
+.top {
+    background: url(/public/images/png/top.jpg) center;
+    background-size: cover;
+}
+
+.bottom {
+    background: url(/public/images/png/bottom.jpg) center;
+    background-size: cover;
+}
+.dresses {
+    background: url(/public/images/png/dress.jpg) center;
+    background-size: cover;
+}
+.castoms {
+    background: url(/public/images/png/castoms.jpg) center;
+    background-size: cover;
+}
+.hoodie {
+    background: url(/public/images/png/hudi.jpg) center;
+    background-size: cover;
+}
+
+.new-clothes {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.new-clothes__items-container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.new-clothes__items {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.new-clothes__button {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.new-clothes__button .button {
+    font-size: 14px;
+}
+
+.banner {
+    height: 512px;
+    margin-top: 73px;
+}
+
+
+@media screen and (max-width: 1140px){ 
+    .wrapper {
+        max-width: 1000px;
+        padding: 0 50px;
+        margin: 0 auto;
+    }
+    .block-small {
+        width: 47%;
+    }
+}
+
+
+@media screen and (max-width: 768px){ 
+    .wrapper {
+        max-width: 768px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    .categories__flex,
+    .categories__main-flex,
+    .small-flex {
+        gap: 8px;
+    }
+    .new-clothes__items {
+        display: flex;
+        width: 130%;
+    }
+
+    .banner {
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width: 650px){
+    .categories__main-flex {
+       display: flex;
+       flex-direction: column;
+       /* height: 376px; */
+    }
+    .categories__flex {
+       flex-wrap: nowrap;
+    }
+    .block {
+       height: 376px;
+       width: 60%;
+    }
+    .block-small {
+       width: 100%;
+       height: 180px;
+    }
+    .small-flex {
+       flex-direction: column;
+       width: 40%;
+    }   
+    .new-clothes__button .button {
+        width: 190px;
+    } 
+ }
+@media screen and (max-width: 520px){
+    .new-clothes__items {
+        flex-wrap: wrap;
+    }
+    .new-clothes__items {
+        display: flex;
+        width: 100%;
+    }
+    .new-clothes__items .product {
+        width: 49%;
+    }
+    .banner {
+        margin-top: 50px;
+    }
+    
+    .new-clothes__button .button {
+        font-size: 12px;
+        
+    }
+   
+}
+
+@media screen and (max-width: 380px){
+    .block {
+        height: 190px;
+     }
+     .block-small {
+        height: 90px;
+     }
+     .categories__flex,
+     .categories__main-flex,
+     .small-flex {
+         gap: 4px;
+     }
+     .banner {
+        margin-top: 40px;
+    }
+}

@@ -25,7 +25,9 @@
 .insta__minis {
     display: flex;
     align-items: flex-end;
+    gap: 6px;
 }
+
 .insta__minis--second {
     align-items: flex-start;
 }

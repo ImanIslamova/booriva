@@ -1,63 +1,22 @@
 .button {
-    background: url(/public/images/svg/pinkback.svg) no-repeat center;
+    /* background: url(/public/images/svg/pinkback.svg) no-repeat center; */
     background-size: contain;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 205px;
+    width: 100%;
     height: 60px;
     max-width: 210px;
     font-family: 'SundayBest';
     font-size: 20px;
+    color: #fff;
 }
-
-.categories .button {
-    position: absolute;
-}
-
-.top .button,
-.bottom .button,
-.hoodie .button {
-    width: 170px;
-}
-
-.t-shirts .button {
-    bottom: 20px;
-    left: 22px;
-}
-
-.bottom .button {
-    bottom: 60px;
-    right: 0px;
-    transform: rotate(-51deg);
-}
-
-.top .button {
-    right: 17px;
-    top: 17px;
-    width: 134px;
-}
-.dresses .button {
-    right: 13px;
-    bottom: 60px;
-}
-.castoms .button {
-    right: 10px;
-    bottom: 10px;
-}
-.hoodie .button {
-    left: 50px;
-    bottom: 40px;
-    transform: rotate(34deg);
-}
-
 
 @media screen and (max-width: 1140px){
     .button {
         width: 160px;
         height: 54px;
     }
-    
 }
 
 @media screen and (max-width: 768px){
@@ -65,15 +24,6 @@
         width: 130px;
         height: 35px;
         font-size: 16px;
-    }
-    .hoodie .button {
-        transform: rotate(0deg);
-        bottom: 15px;
-    }
-    .top .button,
-    .bottom .button,
-    .hoodie .button {
-        width: 120px;
     }
 }
 
@@ -89,13 +39,6 @@
         width: 90px;
         height: 25px;
         font-size: 12px;
-    }
-    .top .button,
-    .bottom .button,
-    .hoodie .button {
-        width: 80px;
-        transform: rotate(0deg);
-    }
-    
+    }    
 }
 

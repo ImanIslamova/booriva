@@ -5,7 +5,7 @@ const Footer = () => {
         <section className='footer'>
             <div className='wrapper'>
                 <div className='footer__logo'>
-                    <img src='images/svg/logo.svg'></img>
+                    <img src='images/svg/logo.svg' alt='logo'></img>
                 </div>
                 <div className='footer__info'>
                     <p className='footer__title'>Инфо</p>
@@ -38,8 +38,8 @@ const Footer = () => {
                 <div className='footer__sociality'>
                     <p className='footer__title'>Соц.. сети</p>
                     <div className='sociality'>
-                        <img src='images/svg/inst.svg'></img>
-                        <img src='images/svg/facebook.svg'></img>
+                        <img src='images/svg/inst.svg' alt='instagram'></img>
+                        <img src='images/svg/facebook.svg' alt='facebook'></img>
                     </div>
                 </div>
                 <div className='footer__read-us'>

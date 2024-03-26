@@ -1,8 +1,8 @@
 import Nav from "./nav/nav";
 import Category from "./category/Category";
-import NewClothes from "./category/categories/NewClothes";
+import NewClothes from "./newClothes/NewClothes";
 import Insta from "./insta/Insta";
-import Footer from "./footer/Footer";
+import Footer from "../../components/layot/footer/Footer";
 
 const HomePage = () =>{
     return (

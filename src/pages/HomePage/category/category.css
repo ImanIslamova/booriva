@@ -15,7 +15,6 @@
     font-weight: 600;
 }
 
-
 h1 {
     font-family: 'SundayBest';
 }
@@ -63,30 +62,75 @@ h1 {
 }
 
 .t-shirts {
-    background: url(/public/images/png/tshirts.jpg) center;
+    background: url(../../../assets/images/tshirts.jpg) center;
     background-size: cover;
 }
 
 .top {
-    background: url(/public/images/png/top.jpg) center;
+    background: url(../../../assets/images/top.jpg) center;
     background-size: cover;
 }
 
 .bottom {
-    background: url(/public/images/png/bottom.jpg) center;
+    background: url(../../../assets/images/bottom.jpg) center;
     background-size: cover;
 }
 .dresses {
-    background: url(/public/images/png/dress.jpg) center;
+    background: url(../../../assets/images/dress.jpg) center;
     background-size: cover;
 }
 .castoms {
-    background: url(/public/images/png/castoms.jpg) center;
+    background: url(../../../assets/images/castoms.jpg) center;
     background-size: cover;
 }
 .hoodie {
-    background: url(/public/images/png/hudi.jpg) center;
+    background: url(../../../assets/images/hudi.jpg) center;
     background-size: cover;
+}
+
+.button__t-shirts,
+.button__dresses,
+.button__top,
+.button__bottom,
+.button__hoodie,
+.button__castoms {
+    position: absolute;
+}
+
+.button__top,
+.button__bottom,
+.button__hoodie {
+    width: 170px;
+}
+
+.button__t-shirts {
+    bottom: 20px;
+    left: 22px;
+}
+
+.button__bottom {
+    bottom: 60px;
+    right: 0px;
+    transform: rotate(-51deg);
+}
+
+.button__top {
+    right: 17px;
+    top: 17px;
+    width: 134px;
+}
+.button__dresses {
+    right: 13px;
+    bottom: 60px;
+}
+.button__castoms {
+    right: 10px;
+    bottom: 10px;
+}
+.button__hoodie {
+    left: 50px;
+    bottom: 40px;
+    transform: rotate(34deg);
 }
 
 .new-clothes {
@@ -151,6 +195,22 @@ h1 {
     .banner {
         margin-top: 50px;
     }
+
+    /* ldskjglkfdjgkldjgldkfjgldkjgldkfgj */
+    .hoodie .button {
+        transform: rotate(0deg);
+        bottom: 15px;
+    }
+    .top .button,
+    .bottom .button,
+    .hoodie .button {
+        width: 120px;
+    }
+
+
+
+
+
 }
 @media screen and (max-width: 650px){
     .categories__main-flex {
@@ -214,4 +274,23 @@ h1 {
      .banner {
         margin-top: 40px;
     }
+
+
+
+
+
+
+
+    .top .button,
+    .bottom .button,
+    .hoodie .button {
+        width: 80px;
+        transform: rotate(0deg);
+    }
+
+
+
+
+
+
 }

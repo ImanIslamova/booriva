@@ -1,9 +1,10 @@
+.product
+    width: 48%
+
 .product__image
     display: block
     border-bottom: 2px #FDA3C4 solid
     margin-bottom: 27px
-
-
 
 .product__image_container 
     max-width: 350px
@@ -35,7 +36,7 @@
     font-weight: 400
     line-height: 19.5px
     text-align: left
-    max-width: 180px
+    max-width: 70%
 
 .product__price 
     font-family: Montserrat
@@ -49,15 +50,11 @@
 @media screen and (max-width: 1260px)
     .product__name 
         font-size: 14px
-        max-width: 120px
-    
+        // max-width: 120px
     
     .product__price 
         font-size: 16px
     
-    
-
-
 @media screen and (max-width: 768px)
     .product__name 
         font-size: 12px
@@ -73,27 +70,24 @@
 
 
 @media screen and (max-width: 680px)
-    .product__name 
-        max-width: 120px
+    // .product__name 
+    //     max-width: 120px
     
+    .product__image_container 
+        padding: 0 8px
 
     .product__image 
         margin-bottom: 8px
     
 
-
-
 @media screen and (max-width: 520px)
     .product__image_container 
         max-width: 217px
         margin: 4px
-        padding: 0 14px
     
     .product__name 
         font-size: 10px
-        max-width: 83px
-    
-    
+
     .product__price 
         font-size: 10px
     

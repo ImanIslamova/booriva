@@ -1,12 +1,12 @@
 import titleLine from './titleline.svg';
 
-import './title.css';
+import styles from './title.module.sass';
 
 const Title = ({title, subtitle}) => {
     return (
-        <h1 className="title">
+        <h1 className={styles.title}>
             {title}
-            <p className="subtitle">
+            <p className={styles.subtitle}>
                 {subtitle} 
                 <img src={titleLine} alt="line" className='title-line'/>
             </p>

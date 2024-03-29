@@ -14,7 +14,7 @@ const Product = ({description, price, photo}) => {
                     <FavorWhite isActive = {isActive}/>
                 </div> 
                 <div className={styles.product__options}>
-                    <p className={styles.product__name}>{description}</p>
+                    <p className={styles.product__name}>{description.length < 25 ? description : description.substr(0, 20) + "..." }</p>
                     <p className={styles.product__price}>{price}</p>
                 </div>           
             </div>

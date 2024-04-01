@@ -1,9 +1,8 @@
-import Ticker from "./ticker/ticker";
-
+import Nav from "./nav/nav";
 
 const HomePage = () =>{
     return (
-        <Ticker/>
+        <Nav />
     )
 }
 

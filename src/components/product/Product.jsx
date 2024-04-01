@@ -1,21 +1,24 @@
-import './product.css';
+//import { useState } from 'react';
+import FavorWhite from '../../assets/svg/favorWhite';
+//import styles from './product.module.css';
+import styles from './product.module.sass';
 
-const Product = ({description, price}) => {
+
+const Product = ({description, price, photo}) => {
+    const isActive = false;
     return (
-        <div className="product">
-            <div class="product__image-container">
-                <img src="/images/png/switshot.png" alt = "свитшот" className="product__image"></img>  
-                <div className="product__favor-container">
-                    <img src="images/svg/favor-white.svg" className="product__favor product__favor--white"></img>
-                    <img src="images/svg/favor-red.svg" className="product__favor product__favor--red"></img>
+        <div className={styles.product}>
+            <div class={styles.product__image_container}>
+                <img src={photo} alt = "свитшот" className="product__image"></img>  
+                <div className={styles.product__favor_container}>
+                    <FavorWhite isActive = {isActive}/>
                 </div> 
-                <div className='product__options'>
-                    <p className='product__name'>{description}</p>
-                    <p className='product__price'>{price}</p>
+                <div className={styles.product__options}>
+                    <p className={styles.product__name}>{description.length < 25 ? description : description.substr(0, 20) + "..." }</p>
+                    <p className={styles.product__price}>{price}</p>
                 </div>           
-
             </div>
-    </div>
+        </div>
     )
 }
 

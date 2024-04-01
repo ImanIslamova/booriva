@@ -2,13 +2,13 @@
     font-family: "Sunday Best [rus by aLiNcE]";
     font-style: normal;
     font-weight: 400;
-    src: url(/src/pages/HomePage/nav/fonts/sundaybestrusbyalince.otf);
+    src: url(/src/components/layout/nav/fonts/sundaybestrusbyalince.otf);
 }
 @font-face {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    src: url(/src/pages/HomePage/nav/fonts/Montserrat-Regular.ttf);
+    src: url(/src/components/layout/nav/fonts/Montserrat-Regular.ttf);
 }
 .store_container{
     max-width: 1042px;

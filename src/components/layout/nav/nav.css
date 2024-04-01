@@ -2,35 +2,35 @@
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    src: url(/src/pages/HomePage/nav/fonts/Montserrat-Regular.ttf);
+    src: url(/src/components/layout/nav/fonts/Montserrat-Regular.ttf);
 }
 
 @font-face {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
-    src: url(/src/pages/HomePage/nav/fonts/Montserrat-SemiBold.ttf);
+    src: url(/src/components/layout/nav/fonts/Montserrat-SemiBold.ttf);
 }
 
 @font-face {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 700;
-    src: url(/src/pages/HomePage/nav/fonts/Montserrat-Bold.ttf);
+    src: url(/src/components/layout/nav/fonts/Montserrat-Bold.ttf);
 }
 
 @font-face {
     font-family: "Montserrat";
     font-style: italic;
     font-weight: 700;
-    src: url(/src/pages/HomePage/nav/fonts/Montserrat-BoldItalic.ttf);
+    src: url(/src/components/layout/nav/fonts/Montserrat-BoldItalic.ttf);
 }
 
 @font-face {
     font-family: "Sunday Best [rus by aLiNcE]";
     font-style: normal;
     font-weight: 400;
-    src: url(/src/pages/HomePage/nav/fonts/sundaybestrusbyalince.otf);
+    src: url(/src/components/layout/nav/fonts/sundaybestrusbyalince.otf);
 }
 
 .wrapper{
@@ -97,7 +97,7 @@
 .adress__icone{
     width: 24px;
     height: 24px;
-    background: url(/src/pages/HomePage/nav/image/adress.svg) center/cover;
+    background: url(/src/components/layout/nav/image/adress.svg) center/cover;
 }
 @media (max-width: 1000px) {
     .adress__icone{
@@ -109,7 +109,7 @@
 .phone__icone{
     width: 24px;
     height: 24px;
-    background: url(/src/pages/HomePage/nav/image/phone.svg) center/cover;
+    background: url(/src/components/layout/nav/image/phone.svg) center/cover;
 }
 @media (max-width: 1000px) {
     .phone__icone{
@@ -121,7 +121,7 @@
 .nav__logo{
     width: 159px;
     height: 40px;
-    background: url(/src/pages/HomePage/nav/image/logo.svg) center/cover;
+    background: url(/src/components/layout/nav/image/logo.svg) center/cover;
     padding-top: 10px;
 }
 @media (max-width: 1000px) {
@@ -148,7 +148,7 @@
 .search__icons{
     width: 24px;
     height: 24px;
-    background: url(/src/pages/HomePage/nav/image/lupa.svg) center/cover;
+    background: url(/src/components/layout/nav/image/lupa.svg) center/cover;
 }
 
 @media (max-width: 1000px) {
@@ -186,7 +186,7 @@
 .favorites{
     width: 24px;
     height: 24px;
-    background: url(/src/pages/HomePage/nav/image/heart.svg) center/cover;
+    background: url(/src/components/layout/nav/image/heart.svg) center/cover;
 }
 @media (max-width: 1000px) {
     .favorites{
@@ -197,7 +197,7 @@
 .basket{
     width: 24px;
     height: 24px;
-    background: url(/src/pages/HomePage/nav/image/basket.svg) center/cover; 
+    background: url(/src/components/layout/nav/image/basket.svg) center/cover; 
 }
 @media (max-width: 1000px) {
     .basket{
@@ -290,7 +290,7 @@
 .menu__messenger{
     width: 32px;
     height: 32px;
-    background: url(/src/pages/HomePage/nav/image/message.svg) center/cover;
+    background: url(/src/components/layout/nav/image/message.svg) center/cover;
 }
 @media (max-width: 450px) {
     .menu__messenger{
@@ -311,7 +311,7 @@
 .menu__basket{
     width: 32px;
     height: 32px;
-    background: url(/src/pages/HomePage/nav/image/basket.svg) center/cover; 
+    background: url(/src/components/layout/nav/image/basket.svg) center/cover; 
 }
 @media (max-width: 450px) {
     .menu__basket{
@@ -322,7 +322,7 @@
 .menu__favorites{
     width: 32px;
     height: 32px;
-    background: url(/src/pages/HomePage/nav/image/heart.svg) center/cover;
+    background: url(/src/components/layout/nav/image/heart.svg) center/cover;
 }
 @media (max-width: 450px) {
     .menu__favorites{

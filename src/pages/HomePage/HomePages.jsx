@@ -1,8 +1,9 @@
-import Nav from "./nav/nav";
+import Nav from "../../components/layot/nav/Nav";
+
 
 const HomePage = () =>{
     return (
-        <Nav />
+        <Nav/>
     )
 }
 

@@ -1,16 +1,15 @@
-import Nav from "../HomePage/nav/nav";
-import Insta from "../HomePage/insta/Insta";
-import Footer from "../../components/layot/footer/Footer";
-import WishList from "./wishList/WishList";
+import mainstyles from '../HomePage/category/category.module.sass'
+import styles from './catalog.module.sass';
+import Filter from './filter/Filter';
 
-const Catalog = () =>{
+const Catalog = () => {
     return (
-        <div>
-            <Nav />
-            <WishList />
-
-            <Insta />
-            <Footer />
+        <div className={styles.catalog}>
+            <div className={mainstyles.wrapper}>
+                <div className={styles.catalogFlex}>
+                    <Filter />
+                </div>
+            </div>
         </div>
     )
 }

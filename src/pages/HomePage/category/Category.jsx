@@ -5,7 +5,7 @@ import Button from "../../../components/buttons/Button";
 
 const Category = () => {
     return (
-        <div className={styles.categories + 'wrapper'}>
+        <div className={`${styles.categories} wrapper`}>
             <div className={styles.categories__main_flex}>
                 <div className={styles.categories__flex}>
                     <div className={`${styles.block} ${styles.t_shirts}`}>

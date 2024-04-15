@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import styles from '..//wishList.module.sass';
+import styles from './wishListComplete.module.sass';
 
 
-import Product from "../../../../components/product/Product";
-import image from '../../../../assets/images/bomber.png'
+import Product from "../../../components/product/Product";
+import image from '../../../assets/images/bomber.png'
 
 const WishListComplete = () => {
     const [products, setProduct] = useState([{id: '001', description: 'Свитшот вставка клетка', price: '1 099 ₽', photo: image}, 

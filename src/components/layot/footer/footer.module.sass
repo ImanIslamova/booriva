@@ -2,8 +2,20 @@
     background: #FDA3C4
     padding-top: 60px
     padding-bottom: 60px
+
+.footer_flex
     display: flex
     justify-content: space-between
+    gap: 30px
+    @media screen and (max-width: 345px)
+        flex-wrap: wrap
+        justify-content: center
+        gap: 20px
+
+
+.footer__logo
+    @media screen and (max-width: 800px)
+        display: none
 
 .footer__title 
     font-family: SundayBest
@@ -13,6 +25,8 @@
     text-align: left
     color: #F40000
     margin-bottom: 15px
+    @media screen and (max-width: 520px)
+        font-size: 10px
 
 .footer__item
     font-family: Montserrat
@@ -22,10 +36,32 @@
     text-align: left
     color: #fff
     margin-bottom: 10px
+    @media screen and (max-width: 520px)
+        font-size: 10px
+
+.footer__sociality
+    @media screen and (max-width: 800px)
+        display: none
+
+.socialityTablet 
+    display: none
+    @media screen and (max-width: 800px)
+       display: block
+
+.footer__info,
+.wrap_in_adaptive 
+    @media screen and (max-width: 350px)
+        width: 46%
 
 .footer__read_us 
     display: flex
     gap: 31px
+    @media screen and (max-width: 1000px)
+        gap: 18px
+    @media screen and (max-width: 520px)
+        display: block
+    @media screen and (max-width: 345px)
+        display: flex
 
 .read_us 
     .footer__item 
@@ -33,10 +69,6 @@
     .footer__title
         border-bottom: 2px solid #f40000
         width: fit-content
-
-.sociality
-    display: flex
-    gap: 16px
 
 .wrap_in_adaptive 
     display: flex

@@ -1,4 +1,4 @@
-import '../../../index.css';
+
 import styles from './category.module.sass';
 
 import Button from "../../../components/buttons/Button";

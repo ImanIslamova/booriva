@@ -1,18 +1,19 @@
 
 
+import BoorivaStore from "./BoorivaStore/BoorivaStore";
 import Category from "./category/Category";
 import NewClothes from "./newClothes/NewClothes";
-import Insta from "./insta/Insta";
-import Footer from "../../components/layot/footer/Footer";
-import Nav from "../../components/layot/nav/Nav";
+import Ticker from "./ticker/ticker";
+
 
 
 const HomePage = () =>{
     return (
         <div>
-            <Nav/>
             <Category />
             <NewClothes />
+            <BoorivaStore/>
+            <Ticker />
         </div>
         
     )

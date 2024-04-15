@@ -1,5 +1,4 @@
 
-import '../../index.css';
 
 import Title from '../../components/title/Title';
 import Advantages from './advantages/advantages';

@@ -1,8 +1,7 @@
 
-import '../../../../index.css';
-import Button from '../../../../components/buttons/Button';
-import styles from '../wishList.module.sass';
-import heart from '../../../../assets/svg/emptyheart.svg'
+import Button from '../../../components/buttons/Button';
+import styles from './wishlistEmpty.module.sass';
+import heart from '../../../assets/svg/emptyheart.svg';
 
 const WishListEmpty = () => {
     return (

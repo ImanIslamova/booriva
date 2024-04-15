@@ -17,7 +17,8 @@ h1
 
 .wrapper
     max-width: 1440px
-    padding: 0 150px
+    padding-left: 150px
+    padding-right: 150px
     margin: 0 auto
 
 ul 
@@ -120,30 +121,6 @@ ul
     bottom: 40px
     transform: rotate(34deg)
 
-.new_clothes
-    margin: 0 auto
-    max-width: 1440px
-
-.new_clothes__items_container
-    max-width: 100%
-    overflow-x: hidden
-
-.new_clothes__items
-    display: flex
-    margin-bottom: 30px
-
-.new_clothes__button
-    color: #fff
-    display: flex
-    justify-content: center
-
-.new_clothes__button .button
-    font-size: 14px
-
-.banner
-    height: content-box
-    margin-top: 73px
-
 @media screen and (max-width: 1140px)
     .wrapper
         max-width: 1000px
@@ -172,21 +149,14 @@ ul
     .small_flex
         gap: 8px
 
-    .new_clothes__items
-        display: flex
-        width: 130%
-
-    .banner
-        margin-top: 50px
-
     /* ldskjglkfdjgkldjgldkfjgldkjgldkfgj */
-    .hoodie .button
+    .button__hoodie
         transform: rotate(0deg)
         bottom: 15px
 
-    .top .button,
-    .bottom .button,
-    .hoodie .button
+    .button__top,
+    .button__bottom,
+    .button__hoodie
         width: 120px
 
 @media screen and (max-width: 650px)
@@ -209,28 +179,12 @@ ul
         flex-direction: column
         width: 40%
 
-    .new_clothes__button .button
-        width: 190px
-
     .categories__flex,
     .categories__main_flex,
     .small_flex
         gap: 6px
 
 @media screen and (max-width: 520px)
-    .new_clothes__items
-        flex-wrap: wrap
-
-    .new_clothes__items
-        display: flex
-        width: 100%
-
-    .new_clothes__items .product
-        width: 49%
-
-    .banner
-        margin-top: 50px
-
     .new_clothes__button .button
         font-size: 12px
 
@@ -250,9 +204,6 @@ ul
     .categories__main_flex,
     .small_flex
         gap: 4px
-
-    .banner
-        margin-top: 40px
 
     .button__top,
     .button__bottom,

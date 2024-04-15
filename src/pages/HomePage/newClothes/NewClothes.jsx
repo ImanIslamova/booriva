@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from '../category/category.module.sass';
+import styles from './newClothes.module.sass';
 import Title from "../../../components/title/Title";
 import Product from "../../../components/product/Product";
 import Button from "../../../components/buttons/Button";
@@ -17,15 +17,15 @@ const NewClothes = () => {
         <section className={styles.new_clothes}>
             <div className={styles.wrapper}>
                 <Title title = 'Новинки' subtitle = 'новинки' />
-            </div>
-            <div className={styles.new_clothes__items_container}>
-                <div className={styles.new_clothes__items}>
-                    {products.map(({description, price, photo}) => {
-                        return <Product description = {description} price = {price} photo={photo}/>
-                    })}
-                </div>
-                <div className={styles.new_clothes__button}>
-                    <Button text = "Смотреть все"/>
+                <div className={styles.new_clothes__items_container}>
+                    <div className={styles.new_clothes__items}>
+                        {products.map(({description, price, photo}) => {
+                            return <Product description = {description} price = {price} photo={photo}/>
+                        })}
+                    </div>
+                    <div className={styles.new_clothes__button}>
+                        <Button text = "Смотреть все"/>
+                    </div>
                 </div>
             </div>
             <div className={styles.banner}>

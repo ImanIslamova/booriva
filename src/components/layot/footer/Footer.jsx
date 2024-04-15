@@ -11,14 +11,16 @@ import ReadUs from './readUs/ReadUs';
 
 const Footer = () => {
     return (
-        <section className={`${styles.footer} ${mainstyles.wrapper}`}>
-                <Logo />
+        <section className={styles.footer}>
+            <div className={`${mainstyles.wrapper} ${styles.footer_flex}`}>
+            <Logo />
                 <Info />
                 <div className={styles.wrap_in_adaptive}>
                     <Address />
                     <Sociality />
                 </div>
                 <ReadUs />
+            </div>
         </section>
     )
 }

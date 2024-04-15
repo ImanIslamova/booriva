@@ -3,9 +3,9 @@ import { useState } from 'react';
 import styles from './advantage/advantage.module.sass';
 
 import Advantage from './advantage/Advantage';
-import cat from '../../../../assets/svg/cat.svg';
-import fly from '../../../../assets/svg/fly.svg';
-import heart from '../../../../assets/svg/heart.svg';
+import cat from '../../../assets/svg/cat.svg';
+import fly from '../../../assets/svg/fly.svg';
+import heart from '../../../assets/svg/heart.svg';
 
 
 const Advantages = () => {

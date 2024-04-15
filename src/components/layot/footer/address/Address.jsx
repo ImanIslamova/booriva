@@ -1,5 +1,7 @@
 import styles from '../footer.module.sass';
 
+import SocialityIcons from '../sociality/socialityIcons/SocialityIcons';
+
 const Address = () => {
     return (
         <div className={styles.footer__address}>
@@ -12,6 +14,9 @@ const Address = () => {
                     Пн — Вс: с 11:00 до 21:00
                 </li>
             </ul>
+            <div className={styles.socialityTablet}>
+                <SocialityIcons />
+            </div>
         </div>
     )
 }

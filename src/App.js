@@ -10,8 +10,8 @@ function App() {
   return (
     <div>
       <Nav />
-      <HomePage />
-      <WishList />
+      {/* <HomePage />
+      <WishList /> */}
       <Catalog />
       <Insta />
       <Footer />

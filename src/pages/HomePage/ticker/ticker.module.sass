@@ -1,0 +1,73 @@
+
+.ticker
+    position: relative
+    overflow: hidden
+    height: 80px
+    background: #FDA3C4
+    padding-top: 10px
+    margin-bottom: 60px
+    @media (max-width: 480px) 
+        height: 60px
+        
+    
+
+
+
+.tickerbox
+    white-space: nowrap
+    display: flex
+    height: 60px
+    border-top: 2px solid #F40000
+    border-bottom: 2px solid #F40000
+    align-items: center
+    @media (max-width: 480px) 
+        height: 40px
+
+    
+.tickertext
+    padding: 0 75px
+    display: flex
+    color: #F40000
+    flex-shrink: 0
+    font-family: Montserrat
+    font-size: 25px
+    font-weight: 600
+    text-transform: uppercase
+    display: inline-block
+    -webkit-animation: scroll 5s infinite linear
+    -moz-animation: scroll 5s infinite linear
+    animation: scroll 5s infinite linear
+    @media (max-width: 480px) 
+        font-size: 16px
+
+   
+@-webkit-keyframes scroll 
+    0% 
+        -webkit-transform: translate(0, 0)
+        transform: translate(0, 0)
+    
+    100% 
+        -webkit-transform: translate(-100%, 0)
+        transform: translate(-100%, 0)
+    
+
+    
+@-moz-keyframes scroll 
+    0% 
+        -moz-transform: translate(0, 0)
+        transform: translate(0, 0)
+    
+    100% 
+        -moz-transform: translate(-100%, 0)
+        transform: translate(-100%, 0)
+    
+
+  
+@keyframes scroll 
+    0% 
+        transform: translate(0, 0)
+    100% 
+        transform: translate(-100%, 0)
+    
+        
+

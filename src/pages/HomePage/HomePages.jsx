@@ -1,4 +1,3 @@
-import Nav from "./nav/nav";
 
 import Category from "./category/Category";
 import NewClothes from "./newClothes/NewClothes";

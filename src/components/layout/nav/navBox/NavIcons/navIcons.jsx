@@ -1,5 +1,7 @@
+
 import Basket from "./basket/basket";
 import Favorites from "./favorites/favorites";
+
 
 
 function NavIcons() {

@@ -1,4 +1,5 @@
 
+import './index.sass';
 
 import Footer from "./components/layot/footer/Footer";
 import HomePage from "./pages/HomePage/HomePages";
@@ -11,9 +12,9 @@ function App() {
   return (
     <div>
       <Nav />
-      {/* <HomePage /> */}
+      <HomePage />
       <WishList />
-      {/* <Catalog /> */}
+      <Catalog />
       <Insta />
       <Footer />
     </div>

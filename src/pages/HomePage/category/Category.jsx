@@ -1,6 +1,5 @@
 
 import styles from './category.module.sass';
-
 import Button from "../../../components/buttons/Button";
 
 const Category = () => {

@@ -1,5 +1,4 @@
 import styles from './insta.module.sass';
-import mainstyles from '../category/category.module.sass';
 
 import instaOneBig from '../../../assets/images/insta-one-big.png'
 import instaOneSmall from '../../../assets/images/insta-one-small.png'
@@ -11,7 +10,7 @@ import instaThreeBig from '../../../assets/images/insta-three-big.png';
 
 const Insta = () => {
     return (
-        <section className={`${styles.insta} ${mainstyles.wrapper}`}>
+        <section className={`${styles.insta} wrapper`}>
             <div className={styles.insta__item}>
                 <div>
                     <div className={styles.insta__title}>Instagram</div>

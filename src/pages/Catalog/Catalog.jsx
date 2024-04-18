@@ -1,16 +1,31 @@
-import mainstyles from '../HomePage/category/category.module.sass'
 import styles from './catalog.module.sass';
 import Filter from './filter/Filter';
+import CatalogBanner from './catalogBanner/CatalogBanner';
+import CatalogProducts from './catalogProducts/CatalogProducts';
+
+
+
 
 const Catalog = () => {
     return (
         <div className={styles.catalog}>
-            <div className={mainstyles.wrapper}>
+            <div className='wrapper'>
                 <div className={styles.catalogFlex}>
                     <Filter />
+                    <div className={styles.rightBlock}>
+                        <CatalogBanner />
+                        <CatalogProducts />
+                    </div>
+
                 </div>
             </div>
         </div>
+// {/* <div className={styles.catalog}>
+//     <Filter />
+//     <div className={styles.rightBlock}> 
+       
+//     </div>
+// </div> */}
     )
 }
 

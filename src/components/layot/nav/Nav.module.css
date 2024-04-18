@@ -1,0 +1,84 @@
+.nav{
+    width: 100%;
+    border-bottom: 1px solid #FDA3C4;
+    position: relative;
+}
+.block{
+    height: 103px;
+    position: relative;
+    z-index: 2;
+    @media (min-width: 768px){
+        width: 738px;
+        padding-top: 14px;
+    }
+    @media (min-width: 1000px){
+        width: 905px;
+        padding-top: 18px;
+    }
+    @media (min-width: 1440px){
+        width: 1140px;
+        padding-top: 10px;
+    }
+}
+.blocktwo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: 768px){
+        margin-bottom: 35px;
+    }
+    @media (min-width: 1000px){
+        margin-bottom: 30px;
+    }
+    @media (min-width: 1440px){
+        margin-bottom: 26px;
+    }
+}
+.boorivaLogo{
+    @media (min-width: 768px){
+        margin-left: 90px;
+        width: 113px; 
+        height: 29px;
+    }
+    @media (min-width: 1000px){
+        margin-left: 135px;
+        width: 113px; 
+        height: 29px;
+    }
+    @media (min-width: 1440px){
+        margin-left: 55px;
+        width: 160px; 
+        height: 40px;
+    }
+}
+.blockthree{
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: 768px){
+        width: 80px;
+    }
+    @media (min-width: 1000px){
+        width: 90px;
+    }
+
+    @media (min-width: 1440px){
+        width: 81px;
+    }
+
+}
+.wishlistIcon{
+    width: 20px;
+    height: 20px;
+    @media (min-width: 1440px){
+        width: 24px;
+        height: 24px;
+    }
+}
+.menu{
+    height: 100%;
+}
+
+.wrapper{
+    max-width: 1143px;
+    margin: 0 auto;
+}

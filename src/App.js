@@ -7,6 +7,7 @@ import Insta from "./pages/HomePage/insta/Insta";
 import WishList from "./pages/wishList/WishList";
 import Catalog from "./pages/Catalog/Catalog";
 import Nav from "./components/layot/nav/Nav";
+import TopProducts from './pages/HomePage/topProducts/TopProducts';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <HomePage />
       <WishList />
       <Catalog />
+      <TopProducts />
       <Insta />
       <Footer />
     </div>

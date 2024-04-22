@@ -1,11 +1,12 @@
 .products 
     display: flex
     flex-wrap: wrap
+    gap: 44px
     @media screen and (max-width: 500px)
         display: block
 
 .productWrap 
-    width: 48%
+    width: calc(50% - 44px)
     @media screen and (max-width: 500px)
         width: 100%
 

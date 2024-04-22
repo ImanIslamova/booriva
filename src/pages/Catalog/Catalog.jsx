@@ -20,12 +20,6 @@ const Catalog = () => {
                 </div>
             </div>
         </div>
-// {/* <div className={styles.catalog}>
-//     <Filter />
-//     <div className={styles.rightBlock}> 
-       
-//     </div>
-// </div> */}
     )
 }
 

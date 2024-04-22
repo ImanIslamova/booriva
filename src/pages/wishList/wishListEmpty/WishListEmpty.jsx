@@ -2,6 +2,7 @@
 import Button from '../../../components/buttons/Button';
 import styles from './wishlistEmpty.module.sass';
 import heart from '../../../assets/svg/emptyheart.svg';
+import { Link } from 'react-router-dom';
 
 const WishListEmpty = () => {
     return (
@@ -14,7 +15,9 @@ const WishListEmpty = () => {
                 <p className={styles.text}>
                 Похоже тебе еще ничего не запало в сердечко....
                 </p>
-                <Button text='На главную'/>
+                <Link to = '/'>
+                    <Button text='На главную'/>
+                </Link>
             </div>
         </div>           
         </div>

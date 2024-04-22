@@ -4,8 +4,7 @@ import BoorivaStore from "./BoorivaStore/BoorivaStore";
 import Category from "./category/Category";
 import NewClothes from "./newClothes/NewClothes";
 import Ticker from "./ticker/ticker";
-
-
+import TopProducts from "./topProducts/TopProducts";
 
 const HomePage = () =>{
     return (
@@ -14,8 +13,8 @@ const HomePage = () =>{
             <NewClothes />
             <BoorivaStore/>
             <Ticker />
+            <TopProducts />
         </div>
-        
     )
 }
 

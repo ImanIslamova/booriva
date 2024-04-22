@@ -16,7 +16,10 @@ const CatalogProduct = () => {
             {products.map(({description, price, photo}) => {
                 return (
                     <div className={styles.productWrap}>
-                        <Product description = {description} price = {price} photo={photo}/>
+                        <Product description = {description} price = {price} 
+                        photo={photo} 
+                        widthImg={'100%'} 
+                        heightImg={'121%'}/>
                     </div>
                 )
             })}

@@ -8,7 +8,9 @@ const Address = () => {
             <p className={styles.footer__title}>Наш адрес</p>
             <ul className={styles.footer__items}>
                 <li className={styles.footer__item}>
-                    г.Киев, ул. Нижний Вал, 37
+                    <a href='https://maps.app.goo.gl/ZFK9tC9po2QK1Bv28' target='_blank'>
+                        г.Грозный, пр. Кадырова, 21
+                    </a>
                 </li>
                 <li className={styles.footer__item}>
                     Пн — Вс: с 11:00 до 21:00

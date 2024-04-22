@@ -1,10 +1,13 @@
 import styles from '../footer.module.sass';
 import logo from '../../../../assets/svg/logo.svg';
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
     return (
     <div className={styles.footer__logo}>
-        <img src={logo} alt='logo'></img>
+        <Link to = "/">
+            <img src={logo} alt='logo'></img>
+        </Link>
     </div>
     )
 }

@@ -39,10 +39,13 @@ const SubMenu = ({isShow, setIsShow}) => {
     ])
     return(
         <ul  className={styles.submenu + ' ' + (isShow ? styles.show : styles.hidden)} onMouseEnter={() => setIsShow(true)} onMouseLeave={() => setIsShow(false)}>
+            <div className={styles.listWrap}>
             {
                 subMenu.map(({id, text}) => <li> <a href="" className={styles.subList} key={id}>{text}</a> </li>)
 
             }
+            </div>
+            <div className={styles.subLine}></div>
         </ul>      
     )
 }

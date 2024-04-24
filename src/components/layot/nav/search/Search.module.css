@@ -1,28 +1,40 @@
+@font-face{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    src: url(../../../../../src/assets/fonts/Montserrat-Bold.ttf);
+}
+
 .search{
     display: flex;
     align-items: center;
     height: 24px;
     margin-left: 100px;
-    @media (min-width: 1440px){
-        margin-left: 90px;
-        width: 81px;
+    @media (max-width: 580px){
+        padding-right: 14px;
+        margin-left: 0;
     }
     @media (min-width: 1440px){
         margin-left: 90px;
         width: 81px;
     }
+
      
 }
 .searchText{
     margin-left: 8px;
     color: #1F1F1F;
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-size: 11px;
     font-weight: 700;
+    line-height: 14px;
     @media (min-width: 1440px){
         margin-left: 16px;
         font-size: 12px;
     }
+    @media (max-width: 580px){
+        display: none;
+    } 
 }
 .searchIcon{
     width: 20px;

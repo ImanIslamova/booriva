@@ -2,11 +2,21 @@
     width: 100%;
     border-bottom: 1px solid #FDA3C4;
     position: relative;
+    @media (max-width: 580px){
+        position: fixed;
+    }
 }
 .block{
     height: 103px;
     position: relative;
     z-index: 2;
+    background-color: #fff;
+    @media (max-width: 400px){
+        height: 35px;
+    }
+    @media (max-width: 580px){
+        height: 50px;
+    }
     @media (min-width: 768px){
         width: 738px;
         padding-top: 14px;
@@ -35,6 +45,12 @@
     }
 }
 .boorivaLogo{
+    min-width: 82px;
+    min-height: 20px;
+    @media (max-width: 580px){
+        order: -1;
+        padding-left: 16px;
+    } 
     @media (min-width: 768px){
         margin-left: 90px;
         width: 113px; 
@@ -54,7 +70,11 @@
 .blockthree{
     display: flex;
     justify-content: space-between;
-    @media (min-width: 768px){
+    @media (max-width: 580px){
+        display: none;
+
+    }
+    @media (max-width: 768px){
         width: 80px;
     }
     @media (min-width: 1000px){

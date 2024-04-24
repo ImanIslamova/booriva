@@ -6,8 +6,6 @@ import instaTwo from '../../../assets/images/insta-two.png';
 import instaThreeSmall from '../../../assets/images/insta-three-small.png';
 import instaThreeBig from '../../../assets/images/insta-three-big.png';
 
-
-
 const Insta = () => {
     return (
         <section className={`${styles.insta} wrapper`}>

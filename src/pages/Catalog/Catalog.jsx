@@ -16,7 +16,6 @@ const Catalog = () => {
                         <CatalogBanner />
                         <CatalogProducts />
                     </div>
-
                 </div>
             </div>
         </div>

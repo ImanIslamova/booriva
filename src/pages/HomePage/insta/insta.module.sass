@@ -9,8 +9,10 @@
     margin-bottom: 60px
     flex: 0 0 33%
     margin-bottom: 60px
+    position: relative
     @media screen and (max-width: 800px)
         flex-wrap: wrap
+        // flex-direction: column
 
 .insta__item 
     display: flex
@@ -22,8 +24,12 @@
 
 .insta_two
     justify-content: flex-end
-
-
+    @media screen and (max-width: 800px)
+        // order: 4
+        // padding-left: 100px
+        // position: absolute
+        // bottom: 100px
+        // right: 0
 .insta__title 
     font-family: 'SundayBest'
     font-size: 54px
@@ -32,16 +38,13 @@
     text-align: left
     color: #1F1F1F
 
-
 .insta__minis 
     display: flex
     align-items: flex-end
     gap: 6px
 
-
 .insta__minis__second 
     align-items: flex-start
-
 
 .insta__text 
     font-family: Montserrat
@@ -51,7 +54,6 @@
     text-align: left
     max-width: 332px
     margin-top: 10px
-
 
 .insta__tag 
     font-family: Montserrat

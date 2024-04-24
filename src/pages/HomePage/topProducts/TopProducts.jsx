@@ -12,14 +12,20 @@ const TopProducts = () => {
         <div className={`${styles.topProducts} wrapper`}>
             <div className = {styles.topProductsFlex}>
                 <div className={styles.products}>
-                    <Product description = 'Бомбер' price = '1560' photo = {image} widthImg={'90%'} heightImg={'100%'}/>
-                    <Product description = 'Бомбер' price = '1560' photo = {image} widthImg={'90%'} heightImg={'100%'}/>
+                    <Link to = "/product">
+                        <Product description = 'Бомбер' price = '1560' photo = {image} widthImg={'90%'} heightImg={'100%'}/>
+                    </Link>
+                    <Link to = "/product">
+                        <Product description = 'Бомбер' price = '1560' photo = {image} widthImg={'90%'} heightImg={'100%'}/>
+                    </Link>
                 </div>
                 <div className={`${styles.products} ${styles.centerImage}`}>
                     {/* <img src={centerImage} alt = 'Фото'/> */}
                 </div>
                 <div className={styles.products}>
-                    <Product description = 'Бомбер' price = '1560' photo = {image} widthImg={'100%'} heightImg={'180%'}/>
+                    <Link to = "/product">
+                        <Product description = 'Бомбер' price = '1560' photo = {image} widthImg={'100%'} heightImg={'180%'}/>
+                    </Link>
                 </div>
             </div>
             <div className={styles.button}>

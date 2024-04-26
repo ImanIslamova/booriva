@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import styles from './catalogProducts.module.sass';
 import Product from '../../../components/product/Product';
-import image from '../../../assets/images/bomber.png'
-
+import image from '../../../assets/images/bomber.png';
 
 const CatalogProduct = () => {
     const [products, setProduct] = useState([{id: '001', description: 'Свитшот вставка клетка', price: '1 099 ₽', photo: image}, 
@@ -16,9 +15,12 @@ const CatalogProduct = () => {
          <div className={styles.products}>
             {products.map(({description, price, photo}) => {
                 return (
-                    // <div className={styles.productWrap}>
-                        <Product description = {description} price = {price} photo={photo}/>
-                    // </div>
+                    <div className={styles.productWrap}>
+                        <Product description = {description} price = {price} 
+                        photo={photo} 
+                        widthImg={'100%'} 
+                        heightImg={'121%'}/>
+                    </div>
                 )
             })}
         </div>

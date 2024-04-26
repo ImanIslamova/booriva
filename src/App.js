@@ -1,3 +1,4 @@
+import { Route, Routes } from 'react-router-dom';
 
 import './index.sass';
 
@@ -12,9 +13,11 @@ function App() {
   return (
     <div>
       <Nav />
-      <HomePage />
-      <WishList />
-      <Catalog />
+      <Routes>
+        <Route path='/' element={<HomePage />}/>
+        <Route path='/catalog' element={<Catalog />}/>
+        <Route path='/wishlist' element={<WishList />}/>
+      </Routes>
       <Insta />
       <Footer />
     </div>

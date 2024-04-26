@@ -14,7 +14,11 @@ const WishListComplete = () => {
         <div className = {styles.wishlist}>
             <div className = {styles.wishlist__items}>
                 {products.map(({description, price, photo}) => {
-                    return <Product description = {description} price = {price} photo={photo}/>
+                    return (
+                        <div className={styles.productWrap}>
+                            <Product description = {description} price = {price} photo={photo}/>
+                        </div>
+                    )
                 })}
             </div>
         </div>

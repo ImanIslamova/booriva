@@ -16,16 +16,9 @@ const Catalog = () => {
                         <CatalogBanner />
                         <CatalogProducts />
                     </div>
-
                 </div>
             </div>
         </div>
-// {/* <div className={styles.catalog}>
-//     <Filter />
-//     <div className={styles.rightBlock}> 
-       
-//     </div>
-// </div> */}
     )
 }
 

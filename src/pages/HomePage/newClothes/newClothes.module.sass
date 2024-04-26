@@ -14,6 +14,7 @@
 .new_clothes__items
     display: flex
     margin-bottom: 30px
+    gap: 40px
 
 .new_clothes__button
     color: #fff
@@ -30,6 +31,8 @@
     img 
         width: 100%
 
+.productWrap
+    width: 48%
 
 @media screen and (max-width: 1140px)
     .wrapper
@@ -50,10 +53,6 @@
     .banner
         margin-top: 50px
 
-@media screen and (max-width: 650px)
-    // .new_clothes__button .button
-    //     width: 190px
-
 @media screen and (max-width: 520px)
     .new_clothes__items
         flex-wrap: wrap
@@ -61,9 +60,9 @@
     .new_clothes__items
         display: flex
         width: 100%
-
-    .new_clothes__items .product
-        width: 49%
+        gap: 16px
+    .productWrap
+        width: calc( 50% - 16px )
 
     .banner
         margin-top: 50px

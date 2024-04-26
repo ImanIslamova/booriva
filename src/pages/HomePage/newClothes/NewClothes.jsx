@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from './newClothes.module.sass';
 import Title from "../../../components/title/Title";
 import Product from "../../../components/product/Product";
@@ -20,17 +21,29 @@ const NewClothes = () => {
                 <div className={styles.new_clothes__items_container}>
                     <div className={styles.new_clothes__items}>
                         {products.map(({description, price, photo}) => {
-                            return <Product description = {description} price = {price} photo={photo}/>
+                            return (
+                                <div className={styles.productWrap}>
+                                    <Product description = {description} 
+                                    price = {price} 
+                                    photo={photo} 
+                                    widthImg={'100%'} 
+                                    heightImg={'121%'}/>
+                                </div>
+                            )
                         })}
                     </div>
                     <div className={styles.new_clothes__button}>
-                        <Button text = "Смотреть все"/>
+                        <Link to="/catalog">
+                            <Button text = "Смотреть все"/>
+                        </Link>
                     </div>
                 </div>
             </div>
-            <div className={styles.banner}>
-                {<img src={banner} alt="Баннер"/>}
-            </div>
+            <Link to="/catalog">
+                <div className={styles.banner}>
+                    {<img src={banner} alt="Баннер"/>}
+                </div>
+            </Link>
         </section>
     )
 }

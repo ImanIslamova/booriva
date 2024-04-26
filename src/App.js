@@ -8,7 +8,6 @@ import Insta from "./pages/HomePage/insta/Insta";
 import WishList from "./pages/wishList/WishList";
 import Catalog from "./pages/Catalog/Catalog";
 import Nav from "./components/layot/nav/Nav";
-import ProductPage from './pages/ProductPage/ProductPage';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
         <Route path='/' element={<HomePage />}/>
         <Route path='/catalog' element={<Catalog />}/>
         <Route path='/wishlist' element={<WishList />}/>
-        {/* <Route path='/product' element={<ProductPage />}/> */}
       </Routes>
       <Insta />
       <Footer />

@@ -18,7 +18,7 @@ function App() {
         <Route path='/' element={<HomePage />}/>
         <Route path='/catalog' element={<Catalog />}/>
         <Route path='/wishlist' element={<WishList />}/>
-        {/* <Route path='/product' element={<ProductPage />}/> */}
+        <Route path='/product' element={<ProductPage />}/>
       </Routes>
       <Insta />
       <Footer />

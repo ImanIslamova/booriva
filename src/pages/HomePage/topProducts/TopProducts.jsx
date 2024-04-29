@@ -13,7 +13,7 @@ const TopProducts = () => {
         <div className={styles.products}>
           <Link to="/product">
             <Product
-              description="Бомбер"
+              name="Бомбер"
               price="1560"
               photo={image}
               widthImg={"90%"}
@@ -22,7 +22,7 @@ const TopProducts = () => {
           </Link>
           <Link to="/product">
             <Product
-              description="Бомбер"
+              name="Бомбер"
               price="1560"
               photo={image}
               widthImg={"90%"}
@@ -36,7 +36,7 @@ const TopProducts = () => {
         <div className={styles.products}>
           <Link to="/product">
             <Product
-              description="Бомбер"
+              name="Бомбер"
               price="1560"
               photo={image}
               widthImg={"100%"}

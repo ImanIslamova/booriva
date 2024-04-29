@@ -9,9 +9,9 @@
 .block{
     height: 103px;
     position: relative;
+    top: -1px;
     z-index: 2;
     padding-top: 20px;
-    top: -20px;
     background: white;
     @media (max-width: 400px){
         height: 35px;

@@ -3,9 +3,6 @@ import Filter from './filter/Filter';
 import CatalogBanner from './catalogBanner/CatalogBanner';
 import CatalogProducts from './catalogProducts/CatalogProducts';
 
-
-
-
 const Catalog = () => {
     return (
         <div className={styles.catalog}>

@@ -3,7 +3,7 @@ import FavorWhite from '../../assets/svg/favorWhite';
 import styles from './product.module.sass';
 
 
-const Product = ({description, price, photo, widthImg, heightImg}) => {
+const Product = ({name, price, photo, widthImg, heightImg}) => {
     const isActive = false;
     return (
         <div className={styles.product}>
@@ -15,7 +15,7 @@ const Product = ({description, price, photo, widthImg, heightImg}) => {
                 </div>           
             </div>
                 <div className={styles.product__options}>
-                    <p className={styles.product__name}>{description.length < 25 ? description : description.substr(0, 20) + "..." }</p>
+                    <p className={styles.product__name}>{name.length < 25 ? name : name.substr(0, 20) + "..." }</p>
                     <p className={styles.product__price}>{price}</p>
                 </div> 
         </div>

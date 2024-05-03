@@ -2,13 +2,13 @@ import { useState } from "react";
 import BoorivaLogo from "../../../assets/icons/BoorivaLogo";
 import Basket from "./basket/Basket";
 import Contacts from "./contacts/Contacts";
-
+import Menu from "./menu/Menu";
 import Search from "./search/Search";
 import Wishlist from "./wishlist/Wishlist";
 import SubMenu from "./menu/subMenu/SubMenu";
 
 import styles from "./../../../components/layot/nav/Nav.module.css";
-import Menu from "./menu/Menu";
+
 
 
 
@@ -32,8 +32,9 @@ const Nav = () => {
                 
                 <div className={styles.menu}>
                     <Menu setIsShow={setIsShow} setMenuId={setMenuId}/>
+                    <SubMenu isShow={isShow} setIsShow={setIsShow} menuId={menuId} />
                 </div>
-                <SubMenu isShow={isShow} setIsShow={setIsShow} menuId={menuId} />
+                
             </div>
         </div>
 

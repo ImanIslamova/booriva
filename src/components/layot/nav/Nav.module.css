@@ -4,20 +4,22 @@
     position: relative;
     z-index: 10;
     background: white;
-    @media (max-width: 675px){
+    @media (max-width: 580px){
         position: fixed;
     }
 }
 .block{
+    background-color: white;
     height: 103px;
-    
+    position: relative;
+
     @media (max-width: 400px){
         height: 35px;
     }
-    @media (max-width: 675px){
+    @media (max-width: 580px){
         height: 50px;
     }
-    @media (min-width: 768px){
+    @media (min-width: 780px){
         width: 738px;
         padding-top: 14px;
     }
@@ -31,11 +33,15 @@
     }
 }
 .blocktwo{
+    background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @media (max-width: 768px){
-        margin-bottom: 35px;
+    @media (max-width: 580px){
+        margin-top: 14px;
+    } 
+    @media (max-width: 780px){
+        margin-bottom: 15px;
     }
     @media (min-width: 1000px){
         margin-bottom: 30px;
@@ -44,39 +50,49 @@
         margin-bottom: 26px;
     }
 }
-.boorivaLogo{
-    min-width: 82px;
-    min-height: 20px;
-    order: 1;
-    @media (max-width: 675px){
+.boorivaLogo {
+    min-width: 69px;
+    min-height: 16px;
+    order: 0;
+    @media (max-width: 390px){
+        padding-left: 14px;
+    } 
+    @media (max-width: 580px){
         order: -1;
         padding-left: 16px;
+        max-width: 82px; 
+        height: 20px;
     } 
-    @media (min-width: 768px){
+    @media (min-width: 780px){
         margin-left: 90px;
-        width: 113px; 
+        max-width: 113px; 
         height: 29px;
     }
     @media (min-width: 1000px){
         margin-left: 135px;
-        width: 113px; 
+        max-width: 113px; 
         height: 29px;
     }
     @media (min-width: 1440px){
         margin-left: 55px;
-        width: 160px; 
+        max-width: 160px; 
         height: 40px;
     }
 }
 .blockthree{
+    background: white;
     display: flex;
     justify-content: space-between;
-    @media (max-width: 675px){
+    margin-left: 103px;
+    gap: 33px;
+    @media (max-width: 580px){
         display: none;
 
     }
-    @media (max-width: 768px){
+    @media (max-width: 780px){
         width: 80px;
+        margin-left: 0;
+        gap: 0;
     }
     @media (min-width: 1000px){
         width: 90px;
@@ -95,21 +111,10 @@
         height: 24px;
     }
 }
+
 .menu{
     height: 100%;
-    top: -50px;
-    z-index: 2;
-    padding-top: 10px;
-    position: relative;
-    @media (max-width: 1000px){
-        top: -20px;
-    }
-    @media (max-width: 779px){
-        top: -30px;
-        padding-top: 30px;
-    }
 }
-
 .wrapper{
     max-width: 1143px;
     margin: 0 auto;

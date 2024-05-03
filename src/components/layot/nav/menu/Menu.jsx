@@ -19,7 +19,7 @@ const Menu = ({setIsShow, setMenuId}) => {
                         setMenuId(id)}} 
                     onMouseLeave={() => setIsShow(false)} 
                     key={id}>
-                    <Link to="/catalog" className={styles.list}>{name}</Link> </li>)
+                    <Link to={`/catalog?menuId=${id}`} className={styles.list}>{name}</Link> </li>)
                     
                 }
                     <li> <Link to="/about_us" className={styles.list} >#Boorivagirls</Link></li>

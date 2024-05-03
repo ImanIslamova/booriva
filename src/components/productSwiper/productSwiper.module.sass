@@ -2,13 +2,33 @@
     height: 609px
     display: flex
     flex-direction: row-reverse
+    @media screen and (max-width: 1000px)
+        height: 530px
+    @media screen and (max-width: 800px)
+        display: block
+    @media screen and (max-width: 800px)
+        height: 400px
+    img
+        object-fit: cover
+        height: 100%
+        width: 100%
 
 .miniSwiperWrap
     height: 609px
     width: 100px
+    @media screen and (max-width: 1000px)
+        height: 530px
+    @media screen and (max-width: 800px)
+        width: 100%
+        height: 85px
+
+.swiper-slide
+    height: auto !important
 
 .miniSwiper
     height: 100%
+    @media screen and (max-width: 500px)
+        display: none
 
 .slide 
     width: 96px
@@ -17,10 +37,7 @@
     overflow: hidden
 
 .bigSlide
-    height: 609px
+    height: 100%
     object-fit: cover
-
-    img 
-        object-fit: cover
 
 

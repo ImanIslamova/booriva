@@ -15,13 +15,21 @@ const Filter = () => {
     ]);
     return (
         <div className={styles.filter}>
-            <Title title='Верх' subtitle='Топы' />
+            <div className={styles.modalTop}>
+                <div className={styles.close}>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div className={styles.mainTitle}>
+                <Title title='Верх' subtitle='Топы' />
+            </div>
             <div className={styles.titleWrap}>
                 <FilterName title = 'Категории' />
             </div>
             <div className={styles.category}>
-                {filterCategory.map(({title}) => {
-                    return <FilterList title={title}/>
+                {filterCategory.map(({title, id}) => {
+                    return <FilterList title={title} key={id}/>
                 })}
             </div>
         </div>

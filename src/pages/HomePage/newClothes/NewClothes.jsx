@@ -5,6 +5,7 @@ import Title from "../../../components/title/Title";
 import Product from "../../../components/product/Product";
 import Button from "../../../components/buttons/Button";
 import image from "../../../assets/images/switshot.png";
+import image2 from "../../../assets/images/ko4.png"
 import banner from "../../../assets/images/baner.png";
 
 const NewClothes = () => {
@@ -41,9 +42,9 @@ const NewClothes = () => {
         <Title title="Новинки" subtitle="новинки" />
         <div className={styles.new_clothes__items_container}>
           <div className={styles.new_clothes__items}>
-            {products.map(({ name, price, photo }) => {
+            {products.map(({ name, price, photo, id }) => {
               return (
-                <div className={styles.productWrap}>
+                <div className={styles.productWrap} key={id}>
                   <Link to="/product">
                     <Product
                       name={name}

@@ -18,8 +18,8 @@ const Characteristics = () => {
       <div className={styles.sizeCont}>
         <p className={styles.chooseSize}>Выбрать размер:</p>
         <div className={styles.sizes}>
-          {size.map(({ size }) => {
-            return <div className={styles.size}>{size}</div>;
+          {size.map(({ size, id }) => {
+            return <div className={styles.size} key={id}>{size}</div>;
           })}
         </div>
         <div className={styles.button}>

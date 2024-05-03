@@ -2,6 +2,8 @@ import styles from './catalog.module.sass';
 import Filter from './filter/Filter';
 import CatalogBanner from './catalogBanner/CatalogBanner';
 import CatalogProducts from './catalogProducts/CatalogProducts';
+import { getCatalogData } from "../../services/catalog";
+
 
 const Catalog = () => {
     return (

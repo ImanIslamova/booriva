@@ -1,11 +1,12 @@
-
 .titleWrap 
     margin-top: 60px
     margin-bottom: 30px
-    @media screen and (max-width: 500px)
-        display: none
     @media screen and (max-width: 400px)
         margin-top: 30px
+
+.mainTitle
+    @media screen and (max-width: 550px)
+        display: none
         
 .category
     font-family: Montserrat
@@ -16,12 +17,54 @@
     display: flex
     flex-direction: column
     gap: 15px
-    @media screen and (max-width: 500px)
-        display: none
+    cursor: pointer
+    @media screen and (max-width: 550px)
+        text-align: center
 
 .filter
-    max-width: 180px
     padding-top: 115px
-    @media screen and (max-width: 500px)
-        padding-top: 50px
+    position: relative
+    @media screen and (max-width: 550px)
+        padding-top: 10px
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        z-index: 10
+        height: 100vh
+        width: 100vw
+        background:#FDA3C4
+        color: #fff
+        display: none
+
+.closeFilter
+    display: none
+
+// .modalTop
+//     display: block
+//     position: relative
+//     top: 0
+
+.close
+    display: flex
+    height: 24px
+    width: 24px
+    border-radius: 50%
+    border: #fff solid 2px
+    position: absolute
+    right: 16px
+    top: 20px
+    justify-content: center
+    align-items: center
+    span
+        display: block
+        position: absolute
+        height: 2px
+        width: 15px
+        background: #fff
+    span:nth-child(1)
+        transform: rotate(46deg)
+    span:nth-child(2)
+        transform: rotate(-46deg)
+
 

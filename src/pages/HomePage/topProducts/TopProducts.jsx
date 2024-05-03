@@ -17,7 +17,8 @@ const TopProducts = () => {
               price="1560"
               photo={image}
               widthImg={"90%"}
-              heightImg={"100%"}
+              heightImg={"92%"}
+              key={'001'}
             />
           </Link>
           <Link to="/product">
@@ -26,7 +27,8 @@ const TopProducts = () => {
               price="1560"
               photo={image}
               widthImg={"90%"}
-              heightImg={"100%"}
+              heightImg={"92%"}
+              key={'002'}
             />
           </Link>
         </div>
@@ -40,7 +42,8 @@ const TopProducts = () => {
               price="1560"
               photo={image}
               widthImg={"100%"}
-              heightImg={"180%"}
+              heightImg={"155%"}
+              key={'003'}
             />
           </Link>
         </div>

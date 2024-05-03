@@ -8,10 +8,10 @@ const ProductPage = () => {
     <div className={`${styles.productPage} wrapper`}>
       <div className={styles.mainFlex}>
         <div className={styles.swipe}>
-            <ProductSwiper />
+          <ProductSwiper />
         </div>
         <div className={styles.characteristics}>
-            <Characteristics />
+          <Characteristics />
         </div>
       </div>
     </div>

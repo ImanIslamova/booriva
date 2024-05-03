@@ -20,7 +20,7 @@ ul{
     height: 100%;
     font-size: 14px;
     line-height: 17px;
-    @media (max-width: 580px){
+    @media (max-width: 675px){
         display: none;
     }
     @media (min-width: 780px){

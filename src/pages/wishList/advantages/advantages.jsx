@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import styles from './advantage/advantage.module.sass';
-
 import Advantage from './advantage/Advantage';
 import cat from '../../../assets/svg/cat.svg';
 import fly from '../../../assets/svg/fly.svg';
@@ -15,8 +14,8 @@ const Advantages = () => {
 ]);
     return (
         <div className={styles.advantages}>
-            {advantages.map(({title, subtitle, photo}) => {
-                return <Advantage title = {title} subtitle = {subtitle} photo={photo} />
+            {advantages.map(({title, subtitle, photo, id}) => {
+                return <Advantage title = {title} subtitle = {subtitle} photo={photo} key={id} />
             })}
         </div>
     )

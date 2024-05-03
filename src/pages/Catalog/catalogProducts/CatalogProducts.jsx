@@ -1,30 +1,52 @@
-import { useState } from 'react';
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import qs from "qs";
 
-import styles from './catalogProducts.module.sass';
-import Product from '../../../components/product/Product';
-import image from '../../../assets/images/bomber.png';
+import styles from "./catalogProducts.module.sass";
+import Product from "../../../components/product/Product";
+import { getCatalogData, getCatalogDataAll } from "../../../services/catalog";
 
 const CatalogProduct = () => {
-    const [products, setProduct] = useState([{id: '001', description: 'Свитшот вставка клетка', price: '1 099 ₽', photo: image}, 
-        {id: '002', description: 'Платье позрачное в цветочек черное', price: '1 299 ₽', photo: image},
-        {id: '003', description: 'Бомбер Gone Crazy хаки', price: '2 499 ₽', photo: image},
-        {id: '004', description: 'Бомбер Gone Crazy хаки', price: '2 499 ₽', photo: image},
-    ]); 
+  const location = useLocation();
+  const [products, setProducts] = useState([]);
 
-    return (
-         <div className={styles.products}>
-            {products.map(({description, price, photo}) => {
-                return (
-                    <div className={styles.productWrap}>
-                        <Product description = {description} price = {price} 
-                        photo={photo} 
-                        widthImg={'100%'} 
-                        heightImg={'121%'}/>
-                    </div>
-                )
-            })}
-        </div>
-    )
-}
+  useEffect(() => {
+    let data = getCatalogDataAll();
+    if (location.search.length > 0) {
+      data = getCatalogData(qs.parse(location.search.substring(1)).menuId);
+      data.then((res) => {
+        res.products.map(({ name, price, images }) => {
+          setProducts(res.products);
+        });
+      });
+    } else {
+      data.then((res) => {
+        res.map(({ name, price, images }) => {
+          setProducts(res);
+        });
+      });
+    }
+  }, [location]);
+  return (
+    <div className={styles.products}>
+      {products.map(({ name, price, images, id }) => {
+        return (
+          <div className={styles.productWrap} key={id}
+          >
+            <Link to="/product">
+              <Product
+                name={name}
+                price={`${price} ₽`}
+                photo={images[0]}
+                widthImg={"100%"}
+                heightImg={"121%"}
+              />
+            </Link>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default CatalogProduct;

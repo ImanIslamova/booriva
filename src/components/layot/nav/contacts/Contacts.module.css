@@ -38,6 +38,13 @@
 .phoneContact{
     display: flex;
     align-items: center;
+    @media (max-width: 390px){
+        padding: 5px 0 0 20px;
+        svg{
+            width: 16px;
+            height: 16px;
+        }
+    }
     @media (max-width: 580px){
         padding-left: 60px;
     }
@@ -45,7 +52,12 @@
 }
 .phoneText{
     margin-left: 10px;
-    width: 121px;
+    width: 162px;
+    @media (max-width: 390px){
+        width: 120px;
+        font-size: 8px;
+        line-height: 9px;
+    }
     @media (max-width: 580px){
         font-size: 10px;
         line-height: 12px;

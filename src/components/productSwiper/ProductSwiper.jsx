@@ -72,12 +72,6 @@ const ProductSwiper = () => {
         <SwiperSlide>
           <img src={image1} />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={image2} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={image3} />
-        </SwiperSlide>
       </Swiper>
       <div className={styles.miniSwiperWrap}>
         <Swiper
@@ -96,17 +90,11 @@ const ProductSwiper = () => {
           <SwiperSlide className={styles.slide}>
             <img src={image2} />
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide className={styles.slide}>
             <img src={image3} />
           </SwiperSlide>
           <SwiperSlide className={styles.slide}>
             <img src={image1} />
-          </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
-            <img src={image2} />
-          </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
-            <img src={image3} />
           </SwiperSlide>
         </Swiper>
       </div>

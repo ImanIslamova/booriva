@@ -1,21 +1,65 @@
 import styles from "./catalog.module.sass";
+
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { getCatalogData, getCatalogDataAll } from "../../services/catalog";
+import qs from "qs";
+
 import Filter from "./filter/Filter";
 import CatalogBanner from "./catalogBanner/CatalogBanner";
-import CatalogProducts from "./catalogProducts/CatalogProducts";
-// import { getCatalogData } from "../../services/catalog";
+import Product from "../../components/product/Product";
 
 const Catalog = () => {
-    // const openFilter = () => {
+  const location = useLocation();
+  const [products, setProducts] = useState([]);
+  const [title, setTitle] = useState([]);
+  const [subTitle, setSubTitle] = useState([]);
 
-    // }
+  useEffect(() => {
+    let data = getCatalogDataAll();
+    if (location.search.length > 0) {
+      data = getCatalogData(qs.parse(location.search.substring(1)).menuId);
+      data.then((res) => {
+        res.products ? setProducts(res.products) : setProducts([]);
+        setTitle(res.menuName);
+        setSubTitle(res.menuName);
+      });
+    } else {
+      data.then((res) => {
+        setProducts(res);
+        setTitle("Всё");
+        setSubTitle("Всё!");
+      });
+    }
+  }, [location]);
+  // const openFilter = () => {
+  // }
   return (
     <div className={styles.catalog}>
       <div className="wrapper">
         <div className={styles.catalogFlex}>
-          <Filter />
+          <Filter title={title} subTitle={subTitle} />
           <div className={styles.rightBlock}>
             <CatalogBanner />
-            <CatalogProducts />
+            <div className={styles.products}>
+              {products.length > 0 
+              ? products.map(({ name, price, images, id }) => {
+                return (
+                  <div className={styles.productWrap} key={id}>
+                    <Link to="/product">
+                      <Product
+                        name={name}
+                        price={`${price} ₽`}
+                        photo={images[0]}
+                        widthImg={"100%"}
+                        heightImg={"121%"}
+                      />
+                    </Link>
+                  </div>
+                );
+              }) : <div className={styles.emptyMessage}> Нет товаров в данной категории </div>}
+            </div>
+            {/* <CatalogProducts /> */}
           </div>
         </div>
         <div className={styles.mobileFilterEllipse}>

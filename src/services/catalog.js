@@ -26,3 +26,8 @@ export const getCategoriesData = async (id) => {
     return res
 }
 
+export const getCard = async (id) => {
+    let res = await fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product/${id}`);
+    res = await res.json();
+    return res
+}

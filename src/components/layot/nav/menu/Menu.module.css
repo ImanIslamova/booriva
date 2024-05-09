@@ -13,12 +13,13 @@ ul{
 .menuli{
     display: flex;
     justify-content: space-between;
-    height: 100%;
+    
 }
 .menu{
+    background: white;
     position: relative;
-    bottom: 15px;
-    height: 100%;
+    z-index: 1;
+    padding-bottom: 15px;
     font-size: 14px;
     line-height: 17px;
     @media (max-width: 580px){

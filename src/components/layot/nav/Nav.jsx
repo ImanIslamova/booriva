@@ -29,7 +29,6 @@ const Nav = () => {
                         <Basket />
                     </div>
                 </div>
-                
                 <div className={styles.menu}>
                     <Menu setIsShow={setIsShow} setMenuId={setMenuId}/>
                     <SubMenu isShow={isShow} setIsShow={setIsShow} menuId={menuId} />

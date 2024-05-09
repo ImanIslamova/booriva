@@ -10,9 +10,7 @@
 }
 .block{
     background-color: white;
-    height: 103px;
     position: relative;
-
     @media (max-width: 400px){
         height: 35px;
     }

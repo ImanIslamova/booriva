@@ -1,4 +1,7 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {getCatalogDataNew} from '../../../services/catalog';
+
 import styles from "./topProducts.module.sass";
 
 import Product from "../../../components/product/Product";
@@ -7,45 +10,56 @@ import image from "../../../assets/images/switshot.png";
 // import centerImage from '../../../assets/images/dress.jpg';
 
 const TopProducts = () => {
+  const location = useLocation();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const data = getCatalogDataNew();
+    data.then((res) => {
+      res[0].products.map(({ name, price, images }) => {
+        setProducts(res[0].products);
+      });
+    });
+  }, [location]);
   return (
     <div className={`${styles.topProducts} wrapper`}>
       <div className={styles.topProductsFlex}>
         <div className={styles.products}>
-          <Link to="/product">
-            <Product
-              name="Бомбер"
-              price="1560"
-              photo={image}
-              widthImg={"90%"}
-              heightImg={"92%"}
-              key={'001'}
-            />
-          </Link>
-          <Link to="/product">
-            <Product
-              name="Бомбер"
-              price="1560"
-              photo={image}
-              widthImg={"90%"}
-              heightImg={"92%"}
-              key={'002'}
-            />
-          </Link>
+        {products.map(({ name, price, images, id }) => {
+              return (
+                <div className={styles.productWrap} key={id}>
+                  <Link to={`/product?id=${id}`}>
+                    <Product
+                      name={name}
+                      price={`${price}`}
+                      photo={images[0]}
+                      widthImg={"90%"}
+                      heightImg={"92%"}
+                    />
+                  </Link>
+                </div>
+              );
+            }).slice(0, 2)}
         </div>
         <div className={`${styles.products} ${styles.centerImage}`}>
           {/* <img src={centerImage} alt = 'Фото'/> */}
         </div>
         <div className={styles.products}>
-          <Link to="/product">
-            <Product
-              name="Бомбер"
-              price="1560"
-              photo={image}
-              widthImg={"100%"}
-              heightImg={"155%"}
-              key={'003'}
-            />
-          </Link>
+        {products.map(({ name, price, images, id }) => {
+              return (
+                <div className={styles.productWrap} key={id}>
+                  <Link to={`/product?id=${id}`}>
+                    <Product
+                      name={name}
+                      price={`${price} ₽`}
+                      photo={images[0]}
+                      widthImg={"100%"}
+                      heightImg={"155%"}
+                    />
+                  </Link>
+                </div>
+              );
+            }).slice(3, 4)}
         </div>
       </div>
       <div className={styles.button}>

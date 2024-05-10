@@ -15,6 +15,7 @@
         width: 100%
 
 .mobileFilterEllipse
+    display: none
     width: 58px
     height: 58px
     background: #f40000
@@ -27,11 +28,38 @@
     font-weight: 600
     line-height: 9.75px
     color: #fff
-    display: flex
     flex-direction: column
     justify-content: center
     align-items: center
     box-shadow: 0px 2px 2px 0px #F4000038
+    @media screen and (max-width: 500px)
+        display: flex
+
+.products 
+    display: flex
+    flex-wrap: wrap
+    gap: 44px
+    @media screen and (max-width: 500px)
+        display: block
+
+.productWrap 
+    width: calc(50% - 22px)
+    @media screen and (max-width: 600px)
+        width: 100%
+
+.emptyMessage 
+    font-family: 'SundayBest'
+    font-size: 20px
+    font-weight: 400
+    line-height: 40.38px
+    text-align: center
+    margin-top: 30px
+    margin: 0 auto
+
+
+
+
+
 
 
 

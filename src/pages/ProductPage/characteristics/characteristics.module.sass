@@ -35,8 +35,12 @@
 
 .sizes
     display: flex
-    justify-content: space-between
-    gap: 5px
+    gap: 44px
+    @media screen and (max-width: 1000px)
+        gap: 16px
+    @media screen and (max-width: 500px)
+        gap: 5px
+        justify-content: space-between
 
 .size
     font-family: Montserrat

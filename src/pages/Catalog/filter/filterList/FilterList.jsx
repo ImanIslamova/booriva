@@ -1,9 +1,9 @@
 import styles from './filterList.module.sass';
 
-const FilterList = ({title}) => {
+const FilterList = ({name}) => {
     return (
         <div className={styles.filterList}>
-            {title}
+            {name}
         </div>
     )
 }

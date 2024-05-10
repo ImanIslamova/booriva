@@ -9,7 +9,6 @@ import { getCatalogData, getCatalogDataAll } from "../../../services/catalog";
 const CatalogProduct = () => {
   const location = useLocation();
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     let data = getCatalogDataAll();
     if (location.search.length > 0) {

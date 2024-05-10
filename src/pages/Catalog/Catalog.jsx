@@ -15,6 +15,8 @@ const Catalog = () => {
   const [title, setTitle] = useState([]);
   const [subTitle, setSubTitle] = useState([]);
 
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  
   useEffect(() => {
     let data = getCatalogDataAll();
     if (location.search.length > 0) {
@@ -38,7 +40,7 @@ const Catalog = () => {
     <div className={styles.catalog}>
       <div className="wrapper">
         <div className={styles.catalogFlex}>
-          <Filter title={title} subTitle={subTitle} />
+          <Filter title={title} subTitle={subTitle} isFilterOpen ={isFilterOpen} setIsFilterOpen={setIsFilterOpen}/>
           <div className={styles.rightBlock}>
             <CatalogBanner />
             <div className={styles.products}>
@@ -62,7 +64,7 @@ const Catalog = () => {
             {/* <CatalogProducts /> */}
           </div>
         </div>
-        <div className={styles.mobileFilterEllipse}>
+        <div className={styles.mobileFilterEllipse} onClick={() => setIsFilterOpen(prev => !prev)}>
           <svg
             width="24"
             height="24"

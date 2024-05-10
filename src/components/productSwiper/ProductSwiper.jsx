@@ -8,9 +8,8 @@ import "swiper/css/thumbs";
 import "swiper/css/pagination";
 
 import styles from "./productSwiper.module.sass";
-import image3 from "../../assets/images/dress.jpg";
 
-const ProductSwiper = ({image1}) => {
+const ProductSwiper = ({images, imageOne, imageTwo, imageThree, imageFour}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
   const [isBlanker, setIsBlanket] = useState(window.innerWidth < 800);
@@ -36,10 +35,7 @@ const ProductSwiper = ({image1}) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  // console.log(image1);
-  // console.log(image1.image);
-
-
+  
   return (
     <div className={styles.productSwiper}>
       <Swiper
@@ -60,17 +56,24 @@ const ProductSwiper = ({image1}) => {
         modules={[FreeMode, Navigation, Pagination, Thumbs]}
         className="mySwiper2"
       >
+        {/* {images.map(({item}) => {
+          return (
+            <SwiperSlide className={styles.bigSlide}>
+              <img src={item} />
+            </SwiperSlide>
+          )  })} */}
+
         <SwiperSlide className={styles.bigSlide}>
-          <img src={image1} />
+          <img src={imageOne} />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={image1} />
+        <img src={imageTwo} />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={image1} />
+        <img src={imageThree} />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={image1} />
+        <img src={imageFour} />
         </SwiperSlide>
       </Swiper>
       <div className={styles.miniSwiperWrap}>
@@ -85,16 +88,16 @@ const ProductSwiper = ({image1}) => {
           className={`${styles.miniSwiper} mySwiper`}
         >
           <SwiperSlide className={styles.slide}>
-            <img src={image1} />
+            <img src={imageOne} />
           </SwiperSlide>
           <SwiperSlide className={styles.slide}>
-            <img src={image1} />
+            <img src={imageTwo} />
           </SwiperSlide>
           <SwiperSlide className={styles.slide}>
-            <img src={image3} />
+            <img src={imageThree} />
           </SwiperSlide>
           <SwiperSlide className={styles.slide}>
-            <img src={image1} />
+            <img src={imageFour} />
           </SwiperSlide>
         </Swiper>
       </div>

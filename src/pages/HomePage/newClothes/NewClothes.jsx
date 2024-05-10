@@ -29,7 +29,7 @@ const NewClothes = () => {
             {products.map(({ name, price, images, id }) => {
               return (
                 <div className={styles.productWrap} key={id}>
-                  <Link to="/product">
+                  <Link to={`/product?id=${id}`}>
                     <Product
                       name={name}
                       price={`${price} ₽`}

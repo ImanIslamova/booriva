@@ -8,17 +8,16 @@ import FilterName from "./filterName/FilterName";
 import { getMenuItems } from "../../../services/menu";
 import { useEffect } from "react";
 
-const Filter = ({ title, subTitle }) => {
-  const [menuId, setMenuId] = useState(0);
+const Filter = ({ title, subTitle, isFilterOpen, setIsFilterOpen }) => {
   const [filterCategory, setFilterCategory] = useState([]);
   useEffect(() => {
     getMenuItems().then((res) => setFilterCategory(res))
 }, [])
 
   return (
-    <div className={styles.filter}>
+    <div className={styles.filter + ' ' + (isFilterOpen && styles.mobileFilterOpen)}>
       <div className={styles.modalTop}>
-        <div className={styles.close}>
+        <div className={styles.close} onClick={() => setIsFilterOpen(prev => !prev)}>
           <span></span>
           <span></span>
         </div>

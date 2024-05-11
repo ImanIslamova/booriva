@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-
-import './index.sass';
+import { useState } from 'react';
 
 import Footer from "./components/layot/footer/Footer";
 import HomePage from "./pages/HomePage/HomePages";
@@ -11,11 +10,14 @@ import Nav from "./components/layot/nav/Nav";
 import ProductPage from './pages/ProductPage/ProductPage';
 import Basket from './components/layot/basket/basket';
 
-function App() {
+import './index.sass';
+
+const App = () => {
+  const[isBasketOpen, setIsBasketOpen] = useState(false);
   return (
-    <div>
-      <Basket />
-      <Nav />
+    <div className={`${isBasketOpen && 'no-scroll'}`}>
+      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
+      <Nav setIsBasketOpen={setIsBasketOpen}/>
       <Routes>
         <Route path='/' element={<HomePage />}/>
         <Route path='/catalog' element={<Catalog />}/>

@@ -11,4 +11,44 @@
         position: relative
     &_open
         transform: translateX(0)
-        
+.backdrop
+    background-color: #000
+    height: 100vh
+    width: 100%
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    z-index: 11
+    opacity: 0
+    pointer-events: none
+    transition: .3s linear
+    &_open
+        opacity: .7
+        pointer-events: all
+
+.box
+    background: red
+    width: 465px
+    height: 453px
+    margin: 85px 59px 0 0
+    &__title
+        text-align: center
+        color: #000000
+        font-family: 'Montserrat'
+        font-weight: 700
+        font-size: 25px
+        line-height: 30px
+
+.block
+    width: 351px
+    height: 107px
+    background: pink
+    margin: 30px 108px 122px 59px
+
+
+.baskets_button
+    width: 159px
+    height: 44px
+    
+

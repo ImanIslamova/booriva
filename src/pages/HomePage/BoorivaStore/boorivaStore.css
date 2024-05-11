@@ -16,6 +16,7 @@
     padding-top: 56px;
     display: flex;
     position: relative;
+    z-index: 2;
 }
 
 .store__wrap{
@@ -143,13 +144,14 @@
     }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 460px) {
     .store__description{
         position: absolute;
         top: 250px;
         right: 0;
         left: 0;
         bottom: 0;
+        z-index: 0;
     }
 }
 .space{

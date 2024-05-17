@@ -1,11 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useRef, useState, useEffect } from "react";
 import { FreeMode, Navigation, Pagination, Thumbs } from "swiper/modules";
+import { useLocation } from 'react-router-dom';
+import qs from "qs";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/pagination";
+import FavorWhite from "../../assets/svg/favorWhite";
 
 import styles from "./productSwiper.module.sass";
 
@@ -13,7 +16,17 @@ const ProductSwiper = ({images, imageOne, imageTwo, imageThree, imageFour}) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
   const [isBlanker, setIsBlanket] = useState(window.innerWidth < 800);
+  const location = useLocation();
+  const [isActive, setisActive] = useState(false);
 
+  const addWishList = () => {
+    if (location.search){
+      const id = qs.parse(location.search.substring(1)).id;
+      const wish = localStorage.getItem('wish') ? JSON.parse(localStorage.getItem('wish')) : [];
+      localStorage.setItem('wish', JSON.stringify([...wish, id]));
+      setisActive(prev => !prev);
+    }
+  }
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 500);
@@ -56,13 +69,9 @@ const ProductSwiper = ({images, imageOne, imageTwo, imageThree, imageFour}) => {
         modules={[FreeMode, Navigation, Pagination, Thumbs]}
         className="mySwiper2"
       >
-        {/* {images.map(({item}) => {
-          return (
-            <SwiperSlide className={styles.bigSlide}>
-              <img src={item} />
-            </SwiperSlide>
-          )  })} */}
-
+        <div className={styles.favor_container} onClick={addWishList}>
+            <FavorWhite isActive={isActive} />
+          </div>
         <SwiperSlide className={styles.bigSlide}>
           <img src={imageOne} />
         </SwiperSlide>

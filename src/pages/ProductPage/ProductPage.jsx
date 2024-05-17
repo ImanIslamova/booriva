@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getCard } from "../../services/catalog";
 import qs from "qs";
@@ -14,17 +14,23 @@ const ProductPage = () => {
   const [imageTwo, setImageTwo] = useState([]);
   const [imageThree, setImageThree] = useState([]);
   const [imageFour, setImageFour] = useState([]);
+  const navigate = useNavigate();
 
   const location = useLocation();
   useEffect(() => {
-   const data = getCard(qs.parse(location.search.substring(1)).id);
-   data.then((res) => {
-    setProduct(res);
-    setImageOne(res.images[0]);
-    setImageTwo(res.images[1]);
-    setImageThree(res.images[2]);
-    setImageFour(res.images[3]);
-   })
+    if (location.search) {
+      const data = getCard(qs.parse(location.search.substring(1)).id);
+      data.then((res) => {
+       setProduct(res);
+       setImageOne(res.images[0]);
+       setImageTwo(res.images[1]);
+       setImageThree(res.images[2]);
+       setImageFour(res.images[3]);
+      })
+    } else {
+      navigate('/');
+    }
+   
   }, [location]);
 
   return (

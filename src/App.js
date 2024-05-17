@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
-
 import Footer from "./components/layot/footer/Footer";
 import HomePage from "./pages/HomePage/HomePages";
 import Insta from "./pages/HomePage/insta/Insta";
@@ -14,6 +13,7 @@ import './index.sass';
 
 const App = () => {
   const[isBasketOpen, setIsBasketOpen] = useState(false);
+  // const [wish, setWish] = useState([]);
   return (
     <div className={`${isBasketOpen && 'no-scroll'}`}>
       <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>

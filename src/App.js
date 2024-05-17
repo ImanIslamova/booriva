@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 
 import './index.sass';
 
@@ -11,6 +12,8 @@ import Nav from "./components/layot/nav/Nav";
 import ProductPage from './pages/ProductPage/ProductPage';
 
 function App() {
+  // const [wish, setWish] = useState([]);
+
   return (
     <div>
       <Nav />

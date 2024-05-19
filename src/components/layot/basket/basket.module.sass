@@ -28,10 +28,9 @@
         pointer-events: all
 
 .box
-    background: red
     width: 465px
     height: 453px
-    margin: 85px 59px 0 0
+    margin-right: 59px 
     &__title
         text-align: center
         color: #000000
@@ -40,15 +39,59 @@
         font-size: 25px
         line-height: 30px
 
-.block
-    width: 351px
-    height: 107px
-    background: pink
-    margin: 30px 108px 122px 59px
-
 
 .baskets_button
+    display: flex
+    align-items: center
+    justify-content: center
     width: 159px
     height: 44px
+    margin: 27px 0 0 162px
     
 
+.close
+    width: 46px
+    height: 46px
+    cursor: pointer
+
+.btn
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end 
+    margin: 39px 54px 0 0 
+
+.block
+    margin: 30px 0 0 59px
+    width: 351px
+    height: 107px
+    &_one
+        font-family: Montserrat
+        display: flex
+        color: #FDA3C4
+        justify-content: space-between
+        margin-bottom: 8px
+    &_two
+        text-align: right
+        font-variant-numeric: lining-nums tabular-nums
+        margin-top: 32px
+        font-weight: 700
+        font-family: Montserrat
+        color: #000
+
+.basketTextSmall
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+
+.basketTextBig
+    font-size: 16px
+
+.basketTextPrice
+    color: #000
+    font-family: Montserrat
+    font-size: 25px
+    font-weight: 400
+    line-height: normal
+
+.basketTextBigPrice
+    font-size: 25px

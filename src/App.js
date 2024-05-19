@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Footer from "./components/layot/footer/Footer";
 import HomePage from "./pages/HomePage/HomePages";
@@ -14,9 +14,20 @@ import './index.sass';
 
 const App = () => {
   const[isBasketOpen, setIsBasketOpen] = useState(false);
+  const [cart, setCart] = useState(
+    localStorage.setItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [], 
+  )
+  useEffect(() => {
+    localStorage.getItem('cart', JSON.stringify(cart))
+  }, [cart])
   return (
     <div className={`${isBasketOpen && 'no-scroll'}`}>
-      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen}/>
+      <Basket 
+      isBasketOpen={isBasketOpen} 
+      setIsBasketOpen={setIsBasketOpen}
+      cart={cart}
+      setCart={setCart}
+      />
       <Nav setIsBasketOpen={setIsBasketOpen}/>
       <Routes>
         <Route path='/' element={<HomePage />}/>

@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getProductData } from 'react-router-dom';
+import { getProductData } from "../../../services/product";
 import Close from '../../../assets/icons/close';
 import Button from '../../buttons/Button';
 

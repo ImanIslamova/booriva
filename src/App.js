@@ -18,7 +18,7 @@ const App = () => {
     localStorage.setItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [], 
   )
   useEffect(() => {
-    localStorage.getItem('cart', JSON.stringify(cart))
+    localStorage.setItem('cart', JSON.stringify(cart))
   }, [cart])
   return (
     <div className={`${isBasketOpen && 'no-scroll'}`}>
@@ -33,7 +33,12 @@ const App = () => {
         <Route path='/' element={<HomePage />}/>
         <Route path='/catalog' element={<Catalog />}/>
         <Route path='/wishlist' element={<WishList />}/>
-        <Route path='/product' element={<ProductPage />}/>
+        <Route 
+        path='/product'
+        element={<ProductPage 
+        cart={cart}
+        setCart={setCart}/>} 
+        />
       </Routes>
       <Insta />
       <Footer />

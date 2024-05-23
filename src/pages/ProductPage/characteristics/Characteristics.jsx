@@ -4,7 +4,7 @@ import styles from "./characteristics.module.sass";
 import Button from "../../../components/buttons/Button";
 import Line from "./line/Line";
 
-const Characteristics = ({name, price, details, desc}) => {
+const Characteristics = ({name, price, details, desc, addProductInCart}) => {
   const [size, setSize] = useState([
     { id: "01", size: "XS - S" },
     { id: "02", size: "S - M" },
@@ -22,7 +22,7 @@ const Characteristics = ({name, price, details, desc}) => {
             return <div className={styles.size} key={id}>{size}</div>;
           })}
         </div>
-        <div className={styles.button}>
+        <div className={styles.button} onClick={addProductInCart}>
           <Button text="В корзину" />
         </div>
         <p className={styles.description}>

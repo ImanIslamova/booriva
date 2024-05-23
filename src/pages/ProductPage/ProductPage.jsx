@@ -14,6 +14,7 @@ const ProductPage = () => {
   const [imageTwo, setImageTwo] = useState([]);
   const [imageThree, setImageThree] = useState([]);
   const [imageFour, setImageFour] = useState([]);
+  const [size, setSize] = useState([]);
   const navigate = useNavigate();
 
   const location = useLocation();

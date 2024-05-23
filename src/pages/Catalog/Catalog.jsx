@@ -26,7 +26,8 @@ const Catalog = () => {
         setTitle(res.menuName);
         setSubTitle(res.menuName);
       });
-    } else {
+    } 
+    else {
       data.then((res) => {
         setProducts(res);
         setTitle("Всё");
@@ -34,8 +35,7 @@ const Catalog = () => {
       });
     }
   }, [location]);
-  // const openFilter = () => {
-  // }
+ 
   return (
     <div className={styles.catalog}>
       <div className="wrapper">
@@ -48,15 +48,17 @@ const Catalog = () => {
               ? products.map(({ name, price, images, id }) => {
                 return (
                   <div className={styles.productWrap} key={id}>
-                    <Link to={`/product?id=${id}`}>
+                    {/* <Link to={`/product?id=${id}`}> */}
                       <Product
                         name={name}
                         price={`${price} ₽`}
                         photo={images[0]}
                         widthImg={"100%"}
                         heightImg={"121%"}
+                        link={`/product?id=${id}`}
+                        id={id}
                       />
-                    </Link>
+                    {/* </Link> */}
                   </div>
                 );
               }) : <div className={styles.emptyMessage}> Нет товаров в данной категории </div>}

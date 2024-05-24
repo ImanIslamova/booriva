@@ -15,7 +15,7 @@ import './index.sass';
 const App = () => {
   const[isBasketOpen, setIsBasketOpen] = useState(false);
   const [cart, setCart] = useState(
-    localStorage.setItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [], 
+    localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [], 
   )
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart))

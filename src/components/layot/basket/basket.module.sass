@@ -28,16 +28,27 @@
         pointer-events: all
 
 .box
-    width: 465px
-    height: 453px
+    height: calc( 100vh - 388px )
+    overflow-y: scroll
     margin-right: 59px 
-    &__title
-        text-align: center
-        color: #000000
-        font-family: 'Montserrat'
-        font-weight: 700
-        font-size: 25px
-        line-height: 30px
+    &::-webkit-scrollbar
+        width: 2px
+    &::-webkit-scrollbar-track
+        background: #fda3c450
+    &::-webkit-scrollbar-thumb
+        border-radius: 4px
+        background: #FDA3C4
+
+
+
+.boxTitle
+    padding-right: 40px
+    text-align: center
+    color: #000000
+    font-family: 'Montserrat'
+    font-weight: 700
+    font-size: 25px
+    line-height: 30px
 
 
 .baskets_button
@@ -61,7 +72,7 @@
     margin: 39px 54px 0 0 
 
 .block
-    margin: 30px 0 0 59px
+    margin: 25px 0 0 59px
     width: 351px
     height: 107px
     &_one
@@ -95,3 +106,41 @@
 
 .basketTextBigPrice
     font-size: 25px
+
+.products
+    padding-top: 40px
+    &_block
+        display: flex
+        gap: 9px
+        width: 369px
+        height: 180px
+    &__image
+        width: 155px
+        height: 180px
+
+.description
+    padding-top: 30px
+    &_name
+        width: 175px
+        color: #000
+        font-family: Montserrat
+        font-size: 16px
+        font-weight: 600
+        line-height: 19px
+    &_size
+        padding-top: 8px
+        color: #000
+        font-family: Montserrat
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+    &_price
+        padding-top: 30px
+        color: #FDA3C4
+        font-family: Montserrat
+        font-size: 16px
+        font-weight: 700
+        line-height: 19px
+
+.btnClear
+    padding-top: 15px

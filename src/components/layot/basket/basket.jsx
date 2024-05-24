@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { getProductData } from "../../../services/product";
 import Close from '../../../assets/icons/close';
 import Button from '../../buttons/Button';
+import Clear from '../../../assets/icons/Clear';
+
 
 import styles from './basket.module.sass'
 
@@ -37,8 +39,32 @@ const Basket = ({isBasketOpen, setIsBasketOpen, cart, setCart}) =>{
                 <div className={styles.btn}>
                     <Close setIsBasketOpen={setIsBasketOpen}/>
                 </div>
+                <h2 className={styles.boxTitle}>КОРЗИНА</h2>
                 <div className={styles.box}>
-                    <h2 className={styles.box__title}>КОРЗИНА</h2>
+                    <div className={styles.products}>
+                        <div className={styles.products_block}>
+                            <div className={styles.products__image}>
+                                {products.map((res) => res.images[0])}
+                            </div>
+                            <div className={styles.description}>
+                                <div className={styles.description_name}>
+                                    {products.map((item) => item.name)}</div>
+                                <div className={styles.description_size}>
+                                    {products.map((item) => item.size)} S - M
+                                </div>
+                                <div className={styles.description_price}>
+                                    {products.map((item) => item.price)} {'₴'}
+                                </div>
+                            </div>
+                            <div className={styles.btnClear}>
+                                {products.map((item) => (
+                                    <div onClick={() => setCart(cart.filter((id) => id !== item.id))}>
+                                    <Clear/>
+                                </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.block}>
                     <div className={styles.block_one}>

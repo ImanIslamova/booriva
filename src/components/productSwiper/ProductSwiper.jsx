@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import { FreeMode, Navigation, Pagination, Thumbs } from "swiper/modules";
 import { useLocation } from 'react-router-dom';
 import qs from "qs";
@@ -9,6 +9,8 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/pagination";
 import FavorWhite from "../../assets/svg/favorWhite";
+import { WishListOpen } from "../../App";
+
 
 import styles from "./productSwiper.module.sass";
 
@@ -18,15 +20,37 @@ const ProductSwiper = ({images, imageOne, imageTwo, imageThree, imageFour}) => {
   const [isBlanker, setIsBlanket] = useState(window.innerWidth < 800);
   const location = useLocation();
   const [isActive, setisActive] = useState(false);
+  const { wish, setWish, addWishList } = useContext(WishListOpen);
 
-  const addWishList = () => {
-    if (location.search){
-      const id = qs.parse(location.search.substring(1)).id;
-      const wish = localStorage.getItem('wish') ? JSON.parse(localStorage.getItem('wish')) : [];
-      localStorage.setItem('wish', JSON.stringify([...wish, id]));
-      setisActive(prev => !prev);
-    }
+  const addProduct = () => {
+    const id = qs.parse(location.search.substring(1)).id;
+    addWishList(id);
   }
+  // const addWishList = () => {
+  //   if (location.search){
+  //     const id = qs.parse(location.search.substring(1)).id;
+  //     const wish = localStorage.getItem('wish') ? JSON.parse(localStorage.getItem('wish')) : [];
+  //     localStorage.setItem('wish', JSON.stringify([...wish, id]));
+  //     setisActive(prev => !prev);
+  //   }
+  // }
+
+  // const addWishList = () => {
+  //   if (location.search){
+  //     const id = qs.parse(location.search.substring(1)).id;
+  //     if (wish.includes(id)) {
+  //         setWish(wish.filter(wishId => wishId !== id));
+  //     } else {
+  //     console.log(id);
+  //     // const id = qs.parse(location.search.substring(1)).id;
+  //     // const wish = localStorage.getItem('wish') ? JSON.parse(localStorage.getItem('wish')) : [];
+  //     localStorage.setItem('wish', JSON.stringify([...wish, id]));
+  //     setisActive(prev => !prev);
+
+  //     setWish(localStorage.getItem('wish') ? JSON.parse(localStorage.getItem('wish')) : []);
+  //   }}
+  // }
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 500);
@@ -69,7 +93,7 @@ const ProductSwiper = ({images, imageOne, imageTwo, imageThree, imageFour}) => {
         modules={[FreeMode, Navigation, Pagination, Thumbs]}
         className="mySwiper2"
       >
-        <div className={styles.favor_container} onClick={addWishList}>
+        <div className={styles.favor_container} onClick={addProduct}>
             <FavorWhite isActive={isActive} />
           </div>
         <SwiperSlide className={styles.bigSlide}>

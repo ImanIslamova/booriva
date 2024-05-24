@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import styles from "./Menu.module.css";
 import { Link } from "react-router-dom";
 import { getMenuItems } from "../../../../services/menu";
+
+import styles from "./Menu.module.css";
 
 const Menu = ({setIsShow, setMenuId}) => {
     const [menu, setMenu] = useState([])

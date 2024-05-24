@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-
-import './index.sass';
+import { useEffect, useState } from 'react';
 
 import Footer from "./components/layot/footer/Footer";
 import HomePage from "./pages/HomePage/HomePages";
@@ -11,16 +10,35 @@ import Nav from "./components/layot/nav/Nav";
 import ProductPage from './pages/ProductPage/ProductPage';
 import Basket from './components/layot/basket/basket';
 
-function App() {
+import './index.sass';
+
+const App = () => {
+  const[isBasketOpen, setIsBasketOpen] = useState(false);
+  const [cart, setCart] = useState(
+    localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [], 
+  )
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
   return (
-    <div>
-      <Basket />
-      <Nav />
+    <div className={`${isBasketOpen && 'no-scroll'}`}>
+      <Basket 
+      isBasketOpen={isBasketOpen} 
+      setIsBasketOpen={setIsBasketOpen}
+      cart={cart}
+      setCart={setCart}
+      />
+      <Nav setIsBasketOpen={setIsBasketOpen}/>
       <Routes>
         <Route path='/' element={<HomePage />}/>
         <Route path='/catalog' element={<Catalog />}/>
         <Route path='/wishlist' element={<WishList />}/>
-        <Route path='/product' element={<ProductPage />}/>
+        <Route 
+        path='/product'
+        element={<ProductPage 
+        cart={cart}
+        setCart={setCart}/>} 
+        />
       </Routes>
       <Insta />
       <Footer />

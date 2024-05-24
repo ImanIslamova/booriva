@@ -11,4 +11,136 @@
         position: relative
     &_open
         transform: translateX(0)
-        
+.backdrop
+    background-color: #000
+    height: 100vh
+    width: 100%
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    z-index: 11
+    opacity: 0
+    pointer-events: none
+    transition: .3s linear
+    &_open
+        opacity: .7
+        pointer-events: all
+
+.box
+    height: calc( 100vh - 388px )
+    overflow-y: scroll
+    margin-right: 59px 
+    &::-webkit-scrollbar
+        width: 2px
+    &::-webkit-scrollbar-track
+        background: #fda3c450
+    &::-webkit-scrollbar-thumb
+        border-radius: 4px
+        background: #FDA3C4
+
+
+
+.boxTitle
+    padding-right: 40px
+    text-align: center
+    color: #000000
+    font-family: 'Montserrat'
+    font-weight: 700
+    font-size: 25px
+    line-height: 30px
+
+
+.baskets_button
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 159px
+    height: 44px
+    margin: 27px 0 0 162px
+    
+
+.close
+    width: 46px
+    height: 46px
+    cursor: pointer
+
+.btn
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end 
+    margin: 39px 54px 0 0 
+
+.block
+    margin: 25px 0 0 59px
+    width: 351px
+    height: 107px
+    &_one
+        font-family: Montserrat
+        display: flex
+        color: #FDA3C4
+        justify-content: space-between
+        margin-bottom: 8px
+    &_two
+        text-align: right
+        font-variant-numeric: lining-nums tabular-nums
+        margin-top: 32px
+        font-weight: 700
+        font-family: Montserrat
+        color: #000
+
+.basketTextSmall
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+
+.basketTextBig
+    font-size: 16px
+
+.basketTextPrice
+    color: #000
+    font-family: Montserrat
+    font-size: 25px
+    font-weight: 400
+    line-height: normal
+
+.basketTextBigPrice
+    font-size: 25px
+
+.products
+    padding-top: 40px
+    &_block
+        display: flex
+        gap: 9px
+        width: 369px
+        height: 180px
+    &__image
+        width: 155px
+        height: 180px
+
+.description
+    padding-top: 30px
+    &_name
+        width: 175px
+        color: #000
+        font-family: Montserrat
+        font-size: 16px
+        font-weight: 600
+        line-height: 19px
+    &_size
+        padding-top: 8px
+        color: #000
+        font-family: Montserrat
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+    &_price
+        padding-top: 30px
+        color: #FDA3C4
+        font-family: Montserrat
+        font-size: 16px
+        font-weight: 700
+        line-height: 19px
+
+.btnClear
+    padding-top: 15px

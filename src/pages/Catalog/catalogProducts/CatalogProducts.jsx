@@ -32,15 +32,17 @@ const CatalogProduct = () => {
         return (
           <div className={styles.productWrap} key={id}
           >
-            <Link to="/product">
+            {/* <Link to="/product"> */}
               <Product
                 name={name}
                 price={`${price} ₽`}
                 photo={images[0]}
                 widthImg={"100%"}
                 heightImg={"121%"}
+                id={id}
+                link={`/product?id=${id}`}
               />
-            </Link>
+            {/* </Link> */}
           </div>
         );
       })}

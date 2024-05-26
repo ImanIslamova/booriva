@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react";
-import styles from "./wishListComplete.module.sass";
+import { useEffect, useState, useContext } from "react";
 import { getCard } from "../../../services/catalog";
-import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { WishListOpen } from "../../../App";
 import Product from "../../../components/product/Product";
+import styles from "./wishListComplete.module.sass";
 
-const WishListComplete = ({ wish }) => {
+const WishListComplete = () => {
+  const { wish, setWish } = useContext(WishListOpen);
   const [products, setProducts] = useState([]);
-  //   console.log(wish.length);
+
   const sendData = async (wish, i, products) => {
     if (i < wish.length) {
       const data = await getCard(wish[i]);
-      // console.log(wish[i]);
       products.push(data);
       if (i < wish.length - 1) {
         return sendData(wish, i + 1, products);
@@ -25,7 +24,6 @@ const WishListComplete = ({ wish }) => {
     const items = sendData(wish, 0, []);
     items.then((res) => setProducts(res));
   }, [wish]);
-  console.log(products);
 
   return (
     <div className={styles.wishlist}>
@@ -33,16 +31,16 @@ const WishListComplete = ({ wish }) => {
         {products.map(({ name, price, images, id, isActive }) => {
           return (
             <div className={styles.productWrap} key={id}>
-              <Link to="/product">
-                <Product
-                  name={name}
-                  price={`${price} ₽`}
-                  photo={images[0]}
-                  widthImg={"100%"}
-                  heightImg={"121%"}
-                  isActive={isActive}
-                />
-              </Link>
+              <Product
+                name={name}
+                price={`${price} ₽`}
+                photo={images[0]}
+                widthImg={"100%"}
+                heightImg={"121%"}
+                link={`/product?id=${id}`}
+                id={id}
+                heart={true}
+              />
             </div>
           );
         })}

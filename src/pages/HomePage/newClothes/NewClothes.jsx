@@ -29,15 +29,15 @@ const NewClothes = () => {
             {products.map(({ name, price, images, id }) => {
               return (
                 <div className={styles.productWrap} key={id}>
-                  <Link to={`/product?id=${id}`}>
-                    <Product
-                      name={name}
-                      price={`${price} ₽`}
-                      photo={images[0]}
-                      widthImg={"100%"}
-                      heightImg={"121%"}
-                    />
-                  </Link>
+                 <Product
+                  name={name}
+                  price={`${price} ₽`}
+                  photo={images[0]}
+                  widthImg={"100%"}
+                  heightImg={"121%"}
+                  link={`/product?id=${id}`}
+                  id={id}
+                />
                 </div>
               );
             }).slice(0, 4)}

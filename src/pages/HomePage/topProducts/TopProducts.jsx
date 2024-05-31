@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {getCatalogDataNew} from '../../../services/catalog';
+import { getCatalogDataNew } from "../../../services/catalog";
 
 import styles from "./topProducts.module.sass";
 
@@ -25,41 +25,43 @@ const TopProducts = () => {
     <div className={`${styles.topProducts} wrapper`}>
       <div className={styles.topProductsFlex}>
         <div className={styles.products}>
-        {products.map(({ name, price, images, id }) => {
+          {products
+            .map(({ name, price, images, id }) => {
               return (
                 <div className={styles.productWrap} key={id}>
-                  <Link to={`/product?id=${id}`}>
-                    <Product
-                      name={name}
-                      price={`${price}`}
-                      photo={images[0]}
-                      widthImg={"90%"}
-                      heightImg={"92%"}
-                    />
-                  </Link>
+                  <Product
+                    name={name}
+                    price={`${price} ₽`}
+                    photo={images[0]}
+                    widthImg={"90%"}
+                    heightImg={"92%"}
+                    link={`/product?id=${id}`}
+                    id={id}
+                  />
                 </div>
               );
-            }).slice(0, 2)}
+            })
+            .slice(0, 2)}
         </div>
-        <div className={`${styles.products} ${styles.centerImage}`}>
-          {/* <img src={centerImage} alt = 'Фото'/> */}
-        </div>
+        <div className={`${styles.products} ${styles.centerImage}`}></div>
         <div className={styles.products}>
-        {products.map(({ name, price, images, id }) => {
+          {products
+            .map(({ name, price, images, id }) => {
               return (
                 <div className={styles.productWrap} key={id}>
-                  <Link to={`/product?id=${id}`}>
-                    <Product
-                      name={name}
-                      price={`${price} ₽`}
-                      photo={images[0]}
-                      widthImg={"100%"}
-                      heightImg={"155%"}
-                    />
-                  </Link>
+                  <Product
+                    name={name}
+                    price={`${price} ₽`}
+                    photo={images[0]}
+                    widthImg={"100%"}
+                    heightImg={"155%"}
+                    link={`/product?id=${id}`}
+                    id={id}
+                  />
                 </div>
               );
-            }).slice(3, 4)}
+            })
+            .slice(3, 4)}
         </div>
       </div>
       <div className={styles.button}>

@@ -11,6 +11,7 @@ import styles from './basket.module.sass'
 
 
 const Basket = ({isBasketOpen, setIsBasketOpen, cart, setCart}) =>{
+    const [allPrice, setAllPrice]=useState(0)
     const [products, setProducts] = useState([])
 
     const sendData = async (cart, i, products) => {
@@ -27,10 +28,21 @@ const Basket = ({isBasketOpen, setIsBasketOpen, cart, setCart}) =>{
         }
     }
 
+
     useEffect(() => {
         const items = sendData(cart, 0, [])
         items.then((res) => setProducts(res))
     }, [cart])
+
+    useEffect(() => {
+      let productsPrice = 0;
+      for(let i = 0; i < products.length; i++) {
+        productsPrice += Number(products[i].price)
+      }
+      setAllPrice(productsPrice)
+    }, [products])
+    
+
     return (
         <div className={styles.basket__wrap}>
             <div className={styles.backdrop + ' ' + (isBasketOpen && styles.backdrop_open)} 
@@ -42,34 +54,29 @@ const Basket = ({isBasketOpen, setIsBasketOpen, cart, setCart}) =>{
                 <h2 className={styles.boxTitle}>КОРЗИНА</h2>
                 <div className={styles.box}>
                     <div className={styles.products}>
-                        <div className={styles.products_block}>
-                            <div className={styles.products__image}>
-                                {products.map((res) => res.images[0])}
-                            </div>
+                        {
+                            products.map((item) =>
+                                <div className={styles.products_block}>
+                            <div className={styles.products__image} style={{backgroundImage: `URL(${item.images[0]})`}}></div>
                             <div className={styles.description}>
-                                <div className={styles.description_name}>
-                                    {products.map((item) => item.name)}</div>
-                                <div className={styles.description_size}>
-                                    {products.map((item) => item.size)} S - M
-                                </div>
-                                <div className={styles.description_price}>
-                                    {products.map((item) => item.price)} {'₴'}
-                                </div>
+                                <div className={styles.description_name}>{item.name}</div>
+                                <div className={styles.description_size}>S-M</div>
+                                <div className={styles.description_price}>{item.price}</div>
                             </div>
                             <div className={styles.btnClear}>
-                                {products.map((item) => (
-                                    <div onClick={() => setCart(cart.filter((id) => id !== item.id))}>
+                                <div onClick={() => setCart(cart.filter((id) => id !== item.id))}>
                                     <Clear/>
                                 </div>
-                                ))}
                             </div>
-                        </div>
+                        </div>)
+                        }
                     </div>
                 </div>
+                {}
                 <div className={styles.block}>
                     <div className={styles.block_one}>
                         <span className={styles.basketTextSmall}>Cумма заказа:</span>
-                        <span className={styles.basketTextBig}>4 998 ₴</span>
+                        <span className={styles.basketTextBig}>{allPrice} ₴</span>
                     </div>
                     <div className={styles.block_one}>
                         <span className={styles.basketTextSmall}>Стоимость доставки:</span>
@@ -77,7 +84,7 @@ const Basket = ({isBasketOpen, setIsBasketOpen, cart, setCart}) =>{
                     </div>
                     <div className={styles.block_two}>
                         <span className={styles.basketTextPrice}>К оплате: . . . . . . . . . . </span>
-                        <span className={styles.basketTextBigPrice}>4 998 ₴</span>
+                        <span className={styles.basketTextBigPrice}>{allPrice} ₴</span>
                     </div>
                 </div>
                 <Link to="/" className={styles.baskets_button}>

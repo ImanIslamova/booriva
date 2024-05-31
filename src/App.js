@@ -12,6 +12,7 @@ import Nav from "./components/layot/nav/Nav";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import Basket from "./components/layot/basket/basket";
 
+export const BasketOpen = createContext();
 export const WishListOpen = createContext();
 
 const App = () => {
@@ -51,29 +52,28 @@ const App = () => {
 
   return (
     <div>
-      <div className={`${isBasketOpen && "no-scroll"}`}>
-        <Basket
-          isBasketOpen={isBasketOpen}
-          setIsBasketOpen={setIsBasketOpen}
-          cart={cart}
-          setCart={setCart}
-        />
-        <WishListOpen.Provider value={{ wish, setWish, addWishList }}>
-          <Nav setIsBasketOpen={setIsBasketOpen} />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/wishlist" element={<WishList />} />
-            <Route
-              path="/product"
-              element={<ProductPage cart={cart} setCart={setCart} />}
-            />
-          </Routes>
-        </WishListOpen.Provider>
-
-        <Insta />
-        <Footer />
-      </div>
+      <BasketOpen.Provider value={{isBasketOpen, setIsBasketOpen}}>
+        <div className={`${isBasketOpen && "no-scroll"}`}>
+          <Basket
+            cart={cart}
+            setCart={setCart}
+          />
+          <WishListOpen.Provider value={{ wish, setWish, addWishList }}>
+            <Nav setIsBasketOpen={setIsBasketOpen} />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/wishlist" element={<WishList />} />
+              <Route
+                path="/product"
+                element={<ProductPage cart={cart} setCart={setCart} />}
+              />
+            </Routes>
+          </WishListOpen.Provider>
+          <Insta />
+          <Footer />
+        </div>
+      </BasketOpen.Provider>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { getProductData } from "../../../services/product";
+import { BasketOpen } from '../../../App';
 import Close from '../../../assets/icons/close';
 import Button from '../../buttons/Button';
 import Clear from '../../../assets/icons/Clear';
@@ -10,9 +11,11 @@ import Clear from '../../../assets/icons/Clear';
 import styles from './basket.module.sass'
 
 
-const Basket = ({isBasketOpen, setIsBasketOpen, cart, setCart}) =>{
+
+const Basket = ({cart, setCart}) =>{
     const [allPrice, setAllPrice]=useState(0)
     const [products, setProducts] = useState([])
+    const {isBasketOpen, setIsBasketOpen} = useContext(BasketOpen)
 
     const sendData = async (cart, i, products) => {
         if(i < cart.length){

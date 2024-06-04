@@ -13,6 +13,8 @@ import ProductPage from "./pages/ProductPage/ProductPage";
 import Basket from "./components/layot/basket/basket";
 
 export const WishListOpen = createContext();
+export const ChooseProductSize = createContext();
+
 
 const App = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
@@ -23,7 +25,7 @@ const App = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const location = useLocation();
+  // const location = useLocation();
   const [isActive, setisActive] = useState(false);
   const [wish, setWish] = useState(
     localStorage.getItem("wish") ? JSON.parse(localStorage.getItem("wish")) : []
@@ -49,8 +51,19 @@ const App = () => {
     localStorage.setItem("wish", JSON.stringify(wish));
   }, [wish]);
 
+
+  const [size, setSize] = useState('xs');
+  const chooseSize = (event) => {
+    setSize(event.target.value);
+    return event.target.value
+  }
+  // useEffect(() => {
+  //   console.log(size);
+  // }, [size]);
+
   return (
     <div>
+      <ChooseProductSize.Provider value={{size, setSize, chooseSize}}>
       <div className={`${isBasketOpen && "no-scroll"}`}>
         <Basket
           isBasketOpen={isBasketOpen}
@@ -70,10 +83,12 @@ const App = () => {
             />
           </Routes>
         </WishListOpen.Provider>
+        
 
         <Insta />
         <Footer />
       </div>
+      </ChooseProductSize.Provider>
     </div>
   );
 };

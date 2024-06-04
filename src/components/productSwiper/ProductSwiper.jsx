@@ -19,7 +19,7 @@ const ProductSwiper = ({images, imageOne, imageTwo, imageThree, imageFour}) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
   const [isBlanker, setIsBlanket] = useState(window.innerWidth < 800);
   const location = useLocation();
-  const [isActive, setisActive] = useState(false);
+  const [isActive, setisActive] = useState();
   const { wish, setWish, addWishList } = useContext(WishListOpen);
 
   const addProduct = () => {

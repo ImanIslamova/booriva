@@ -6,14 +6,16 @@ import Advantages from './advantages/advantages';
 import WishListComplete from './wishListComplete/WishListComplete';
 import WishListEmpty from './wishListEmpty/WishListEmpty';
 import { WishListOpen } from '../../App';
+import { useDispatch, useSelector } from 'react-redux';
+import { setWish } from '../../redux/wishSlice/wishSlice';
 
 const WishList = () => {
-    const { wish, setWish } = useContext(WishListOpen);
-
+    const wish = useSelector(state => state.wish.wish);
+    const dispatch = useDispatch()
     useEffect(() => {
         const storedWish = JSON.parse(localStorage.getItem('wish'));
         if (storedWish) {
-          setWish(storedWish);
+          dispatch(setWish(storedWish))
         }
       }, [setWish]);
 

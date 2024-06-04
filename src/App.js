@@ -11,12 +11,13 @@ import Catalog from "./pages/Catalog/Catalog";
 import Nav from "./components/layot/nav/Nav";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import Basket from "./components/layot/basket/basket";
+import {useSelector} from "react-redux";
 
-export const WishListOpen = createContext();
 export const ChooseProductSize = createContext();
 
-
 const App = () => {
+  const wish = useSelector(state => state.wish.wish);
+  
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [cart, setCart] = useState(
     localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
@@ -27,43 +28,13 @@ const App = () => {
 
   // const location = useLocation();
   const [isActive, setisActive] = useState(false);
-  const [wish, setWish] = useState(
-    localStorage.getItem("wish") ? JSON.parse(localStorage.getItem("wish")) : []
-  );
-
-  const addWishList = (id) => {
-    if (wish.includes(id)) {
-      setWish(wish.filter((wishId) => wishId !== id));
-    } else {
-      console.log(id);
-      localStorage.setItem("wish", JSON.stringify([...wish, id]));
-      setisActive((prev) => !prev);
-
-      setWish(
-        localStorage.getItem("wish")
-          ? JSON.parse(localStorage.getItem("wish"))
-          : []
-      );
-    }
-  };
 
   useEffect(() => {
     localStorage.setItem("wish", JSON.stringify(wish));
   }, [wish]);
 
-
-  const [size, setSize] = useState('xs');
-  const chooseSize = (event) => {
-    setSize(event.target.value);
-    return event.target.value
-  }
-  // useEffect(() => {
-  //   console.log(size);
-  // }, [size]);
-
   return (
     <div>
-      <ChooseProductSize.Provider value={{size, setSize, chooseSize}}>
       <div className={`${isBasketOpen && "no-scroll"}`}>
         <Basket
           isBasketOpen={isBasketOpen}
@@ -71,7 +42,6 @@ const App = () => {
           cart={cart}
           setCart={setCart}
         />
-        <WishListOpen.Provider value={{ wish, setWish, addWishList }}>
           <Nav setIsBasketOpen={setIsBasketOpen} />
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -82,13 +52,9 @@ const App = () => {
               element={<ProductPage cart={cart} setCart={setCart} />}
             />
           </Routes>
-        </WishListOpen.Provider>
-        
-
         <Insta />
         <Footer />
       </div>
-      </ChooseProductSize.Provider>
     </div>
   );
 };

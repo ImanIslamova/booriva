@@ -16,8 +16,8 @@ const ProductPage = ({cart, setCart}) => {
   const [imageFour, setImageFour] = useState([]);
   const [size, setSize] = useState([]);
   const navigate = useNavigate();
-
   const location = useLocation();
+
   useEffect(() => {
     if (location.search) {
       const data = getProductData(qs.parse(location.search.substring(1)).id);
@@ -31,8 +31,8 @@ const ProductPage = ({cart, setCart}) => {
     } else {
       navigate('/');
     }
-   
   }, [location]);
+  
   const addProductInCart = () =>{
     if (location.search) {
       const id = qs.parse(location.search.substring(1)).id;

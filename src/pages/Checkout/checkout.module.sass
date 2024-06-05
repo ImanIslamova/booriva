@@ -6,12 +6,20 @@
         gap: 60px
     @media screen and (max-width: 800px)
         flex-direction: column-reverse
+        padding-left: 70px
+        padding-right: 70px
+        gap: 30px
 
 .checkoutOptions
     width: calc( 70% - 50px )
+    @media screen and (max-width: 800px)
+        width: 100%
 
 .basket
     width: calc( 40% - 50px )
+    @media screen and (max-width: 800px)
+        display: none
+
 
 .clientDataSection,
 .deliverySection
@@ -55,10 +63,48 @@
     span
         color: #FDA3C4
 
-
 .button
     width: 200px
     margin:  0 auto
+
+.basketDataResult  
+    font-family: Montserrat
+    font-size: 16px
+    font-weight: 400
+    line-height: 19.5px
+    text-align: left
+    margin-top: 20px
+    display: flex
+    flex-direction: column
+    gap: 10px
+    
+.basketData
+    display: none
+    @media screen and (max-width: 800px)
+        display: block
+
+    .total
+        b
+            color: #FDA3C4
+        &::after
+            left: 60px
+            content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+
+
+.total,
+.totalSumm
+    display: flex
+    justify-content: space-between
+    position: relative
+    &::after
+        content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+        position: absolute
+        font-size: 30px
+        left: 120px
+        bottom: 5px
+    
+
+
 
 
 

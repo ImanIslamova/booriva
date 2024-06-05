@@ -3,6 +3,7 @@ import Basket from "../../components/layot/basket/basket";
 import TitleOrder from "../../components/title/TitleOrder";
 import styles from "./checkout.module.sass";
 import Button from "../../components/buttons/Button";
+import Title from "../../components/title/Title";
 
 const Checkout = () => {
   const [firstName, setFirstName] = useState("");
@@ -48,8 +49,7 @@ const Checkout = () => {
 
   const sendData = () => {
     console.log(User, Delivery);
-  }
-
+  };
 
   return (
     <div className={styles.checkoutPage}>
@@ -135,8 +135,21 @@ const Checkout = () => {
               </div>
             </div>
             <div className={styles.button} onClick={sendData}>
-                <Button text='Оформить заказ'/>
-              </div>
+              <Button text="Оформить заказ" />
+            </div>
+          </div>
+          <div className={styles.basketData}>
+            <Title title="В корзине" subtitle="Товары в корзине" />
+            <div className={styles.basketDataResult}>
+                <div className={styles.total}>
+                    Всего
+                    <b> 6 товаров</b>
+                </div>
+                <div className={styles.totalSumm}>
+                    Сумма заказа
+                    <b>6000 ₽</b>
+                </div>
+            </div>
           </div>
           <div className={styles.basket}>
             Здесь у нас воображаемая корзина

@@ -20,12 +20,22 @@ const Catalog = () => {
   useEffect(() => {
     let data = getCatalogDataAll();
     if (location.search.length > 0) {
-      data = getCatalogData(qs.parse(location.search.substring(1)).menuId);
-      data.then((res) => {
-        res.products ? setProducts(res.products) : setProducts([]);
-        setTitle(res.menuName);
-        setSubTitle(res.menuName);
-      });
+      const params = qs.parse(location.search.substring(1));
+      if (params.menuId){
+        data = getCatalogData(params.menuId);
+        data.then((res) => {
+          res.products ? setProducts(res.products) : setProducts([]);
+          setTitle(res.menuName);
+          setSubTitle(res.menuName);
+        });
+      } else if (params.categoryId){
+        data = getCategoriesData(params.categoryId);
+        data.then((res) => {
+          res[0].products ? setProducts(res[0].products) : setProducts([]);
+          setTitle(res[0].menuName);
+          setSubTitle(res[0].categoryName);
+        });
+      }
     } 
     else {
       data.then((res) => {

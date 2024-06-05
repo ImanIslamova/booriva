@@ -90,7 +90,7 @@ const Basket = ({cart, setCart}) =>{
                         <span className={styles.basketTextBigPrice}>{allPrice} ₴</span>
                     </div>
                 </div>
-                <Link to="/" className={styles.baskets_button}>
+                <Link to="/checkout" className={styles.baskets_button}>
                     <Button text = "ОФОРМИТЬ ЗАКАЗ"/>
                 </Link>
             </div>

@@ -12,6 +12,7 @@ import Nav from "./components/layot/nav/Nav";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import Basket from "./components/layot/basket/basket";
 import {useSelector} from "react-redux";
+import Checkout from "./pages/Checkout/Checkout";
 
 export const ChooseProductSize = createContext();
 export const BasketOpen = createContext();
@@ -52,6 +53,7 @@ const App = () => {
               path="/product"
               element={<ProductPage cart={cart} setCart={setCart} />}
             />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         <Insta />
         <Footer />

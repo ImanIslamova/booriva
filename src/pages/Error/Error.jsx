@@ -8,7 +8,7 @@ const Error = () => {
     return (
         <div className={styles.errorPage}>
             <div className={styles.ticker}>
-                <Ticker />
+                <Ticker text={"похоже, что-то пошло не так..."}/>
             </div>
 
             <div className="wrapper">

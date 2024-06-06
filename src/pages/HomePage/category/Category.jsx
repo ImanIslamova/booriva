@@ -49,7 +49,7 @@ const Category = () => {
                             </div>
                         </Link>
                     </div>
-                    <Link to = '/catalog' className='link'>
+                    <Link to = '/error' className='link'>
                         <div className={`${styles.block} ${styles.hoodie}`}>
                             <div className={styles.button__hoodie}>
                                 <Button text = "Худи"/>

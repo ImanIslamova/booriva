@@ -13,7 +13,7 @@ const HomePage = () =>{
             <Category />
             <NewClothes />
             <BoorivaStore/>
-            <Ticker />
+            <Ticker text={"топовые товары"} />
             <TopProducts />
         </div>
     )

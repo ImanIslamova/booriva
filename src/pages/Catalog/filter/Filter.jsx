@@ -32,7 +32,7 @@ const Filter = ({ title, subTitle, isFilterOpen, setIsFilterOpen }) => {
         
       {filterCategory.map(({ id, name }) => (
         <div key = {id}>
-          <Link to={`/catalog?menuId=${id}`} className={styles.filterList}>
+          <Link to={`/catalog?menuId=${id}`} className={styles.filterList} onClick={() => setIsFilterOpen(prev => !prev)}>
             {name}
           </Link>
         </div>

@@ -1,11 +1,11 @@
 import { useEffect, useState, useContext } from "react";
 import { getCard } from "../../../services/catalog";
-import { WishListOpen } from "../../../App";
 import Product from "../../../components/product/Product";
 import styles from "./wishListComplete.module.sass";
+import { useSelector } from "react-redux";
 
 const WishListComplete = () => {
-  const { wish, setWish } = useContext(WishListOpen);
+  const wish = useSelector(state => state.wish.wish);
   const [products, setProducts] = useState([]);
 
   const sendData = async (wish, i, products) => {

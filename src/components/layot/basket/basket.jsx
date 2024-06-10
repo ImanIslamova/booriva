@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { getProductData } from "../../../services/product";
 import { BasketOpen } from '../../../App';
+import {useSelector} from "react-redux";
+import { setCart } from '../../../redux/cartSlice/cartSlice';
 import Close from '../../../assets/icons/close';
 import Button from '../../buttons/Button';
 import Clear from '../../../assets/icons/Clear';
@@ -12,7 +14,9 @@ import styles from './basket.module.sass'
 
 
 
-const Basket = ({cart, setCart}) =>{
+
+const Basket = () =>{
+    const cart = useSelector(state => state.cart.cart);
     const [allPrice, setAllPrice]=useState(0)
     const [products, setProducts] = useState([])
     const {isBasketOpen, setIsBasketOpen} = useContext(BasketOpen)
@@ -67,7 +71,7 @@ const Basket = ({cart, setCart}) =>{
                                 <div className={styles.description_price}>{item.price}</div>
                             </div>
                             <div className={styles.btnClear}>
-                                <div onClick={() => setCart(cart.filter((id) => id !== item.id))}>
+                                <div onClick={(state) => setCart(state.cart.filter((id) => id !== item.id))}>
                                     <Clear/>
                                 </div>
                             </div>

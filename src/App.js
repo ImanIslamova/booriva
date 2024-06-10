@@ -19,11 +19,10 @@ export const BasketOpen = createContext();
 
 const App = () => {
   const wish = useSelector(state => state.wish.wish);
-  
+  const cart = useSelector(state => state.cart.cart);
+
   const [isBasketOpen, setIsBasketOpen] = useState(false);
-  const [cart, setCart] = useState(
-    localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
-  );
+  
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -39,10 +38,7 @@ const App = () => {
     <div>
     <BasketOpen.Provider value={{isBasketOpen, setIsBasketOpen}}>
       <div className={`${isBasketOpen && "no-scroll"}`}>
-        <Basket
-          cart={cart}
-          setCart={setCart}
-        />
+        <Basket/>
           <Nav setIsBasketOpen={setIsBasketOpen} />
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -50,7 +46,7 @@ const App = () => {
             <Route path="/wishlist" element={<WishList />} />
             <Route
               path="/product"
-              element={<ProductPage cart={cart} setCart={setCart} />}
+              element={<ProductPage />}
             />
           </Routes>
         <Insta />

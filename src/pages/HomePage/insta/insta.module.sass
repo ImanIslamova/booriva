@@ -25,11 +25,19 @@
 .insta_two
     justify-content: flex-end
     @media screen and (max-width: 800px)
-        // order: 4
-        // padding-left: 100px
-        // position: absolute
-        // bottom: 100px
-        // right: 0
+        .abaldet
+            order: 4
+            // padding-left: 100px
+            position: absolute
+            // bottom: 100px
+            top: 94px
+            right: 0
+            width: 47vw
+            @media screen and (max-width: 600px)
+                width: 47vw
+                padding-left: 0
+
+            
 .insta__title 
     font-family: 'SundayBest'
     font-size: 54px
@@ -39,8 +47,12 @@
     color: #1F1F1F
     position: relative
     z-index: 1
-    @media screen and (max-width: 500px)
+    @media screen and (max-width: 750px)
+        font-size: 40px
+    @media screen and (max-width: 600px)
         font-size: 36px
+    @media screen and (max-width: 400px)
+        font-size: 26px
 
 
 

@@ -1,0 +1,178 @@
+.backdrop
+    background-color: #000
+    height: 100vh
+    width: 100vw
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    z-index: 11
+    opacity: 0
+    pointer-events: none
+    transition: .3s linear
+    &_open
+        opacity: .7
+        pointer-events: all
+
+.modal
+    width: 500px
+    height: 500px
+    background: #fff
+    position: fixed
+    top: calc( 50% - 200px)
+    right: calc( 50% - 250px)
+    justify-content: center
+    align-items: center
+    z-index: 13
+    display: none
+    padding: 50px
+    font-family: Montserrat
+    &_open
+        display: flex
+
+.text
+    margin-top: 40px
+    margin-bottom: 50px
+
+
+.close
+    display: flex
+    height: 24px
+    width: 24px
+    border-radius: 50%
+    border: #f40000 solid 2px
+    background: #f40000
+    position: absolute
+    right: 16px
+    top: 20px
+    justify-content: center
+    align-items: center
+    span
+        display: block
+        position: absolute
+        height: 1px
+        width: 15px
+        background: #fff
+    span:nth-child(1)
+        transform: rotate(46deg)
+    span:nth-child(2)
+        transform: rotate(-46deg)
+
+
+
+
+.checkout
+    padding-top: 60px
+    display: flex
+    gap: 100px
+    @media screen and (max-width: 1000px)
+        gap: 60px
+    @media screen and (max-width: 800px)
+        flex-direction: column-reverse
+        padding-left: 70px
+        padding-right: 70px
+        gap: 30px
+
+.checkoutOptions
+    width: calc( 70% - 50px )
+    @media screen and (max-width: 800px)
+        width: 100%
+
+.basket
+    width: calc( 40% - 50px )
+    @media screen and (max-width: 800px)
+        display: none
+
+
+.clientDataSection,
+.deliverySection
+    display: flex
+    gap: 30px
+    justify-content: space-between
+    margin-bottom: 55px
+
+.input,
+.address
+    padding: 15px 20px
+    color: #FDA3C4
+    border: 2px solid #1F1F1F
+    font-family: Montserrat
+    font-size: 14px
+    font-weight: 400
+    line-height: 17.07px
+    text-align: left
+    border-radius: 4px
+    width: 100%
+.input::placeholder,
+.address::placeholder
+    color: #FDA3C4
+
+.address 
+    height: 100px
+    margin-top: 20px
+
+.client,
+.delivery
+    display: flex
+    flex-direction: column
+    gap: 10px
+    width: 334px
+
+    font-family: Montserrat
+    font-size: 16px
+    font-weight: 400
+    line-height: 19.5px
+    text-align: left
+    span
+        color: #FDA3C4
+
+.button
+    width: 200px
+    margin:  0 auto
+
+.basketDataResult  
+    font-family: Montserrat
+    font-size: 16px
+    font-weight: 400
+    line-height: 19.5px
+    text-align: left
+    margin-top: 20px
+    display: flex
+    flex-direction: column
+    gap: 10px
+    
+.basketData
+    display: none
+    @media screen and (max-width: 800px)
+        display: block
+
+    .total
+        b
+            color: #FDA3C4
+        &::after
+            left: 60px
+            content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+
+
+.total,
+.totalSumm
+    display: flex
+    justify-content: space-between
+    position: relative
+    &::after
+        content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+        position: absolute
+        font-size: 30px
+        left: 120px
+        bottom: 5px
+    
+
+
+
+
+
+
+
+
+
+

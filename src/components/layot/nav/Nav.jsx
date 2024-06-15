@@ -10,6 +10,8 @@ import MenuBottom from "./menu/menuBottom/menuBottom";
 
 
 import styles from "./../../../components/layot/nav/Nav.module.css";
+import Searchs from "../searcher/searcher";
+import Searcher from "../searcher/searcher";
 
 
 
@@ -36,6 +38,7 @@ const Nav = ({setIsBasketOpen}) => {
                     <MenuBottom/>
                 </div>
                 <SubMenu isShow={isShow} setIsShow={setIsShow} menuId={menuId} />
+                <Searcher />
             </div>
         </div>
 

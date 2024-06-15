@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { getProductData } from "../../../services/product";
 import { BasketOpen } from '../../../App';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { setCart } from '../../../redux/cartSlice/cartSlice';
 import Close from '../../../assets/icons/close';
 import Button from '../../buttons/Button';
@@ -19,6 +19,7 @@ const Basket = () =>{
     const cart = useSelector(state => state.cart.cart);
     const [allPrice, setAllPrice]=useState(0)
     const [products, setProducts] = useState([])
+    const dispatch = useDispatch()
     const {isBasketOpen, setIsBasketOpen} = useContext(BasketOpen)
 
     const sendData = async (cart, i, products) => {
@@ -68,10 +69,10 @@ const Basket = () =>{
                             <div className={styles.description}>
                                 <div className={styles.description_name}>{item.name}</div>
                                 <div className={styles.description_size}>S-M</div>
-                                <div className={styles.description_price}>{item.price}</div>
+                                <div className={styles.description_price}>{item.price + ' ₴'}</div>
                             </div>
                             <div className={styles.btnClear}>
-                                <div onClick={(state) => setCart(state.cart.filter((id) => id !== item.id))}>
+                                <div onClick={() => dispatch(setCart(cart.filter((id) => id !== item.id)))}>
                                     <Clear/>
                                 </div>
                             </div>

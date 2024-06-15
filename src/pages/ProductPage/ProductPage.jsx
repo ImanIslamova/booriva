@@ -1,22 +1,25 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProductData } from "../../services/product";
+import { useDispatch, useSelector } from "react-redux";
 import qs from "qs";
+import ProductSwiper from "../../components/productSwiper/ProductSwiper";
+import Characteristics from "./characteristics/Characteristics";
+import { setCart } from "../../redux/cartSlice/cartSlice";
 
 import styles from "./productPage.module.sass";
 
-import ProductSwiper from "../../components/productSwiper/ProductSwiper";
-import Characteristics from "./characteristics/Characteristics";
-
-const ProductPage = ({cart, setCart}) => {
+const ProductPage = () => {
   const [product, setProduct] = useState([]);
   const [imageOne, setImageOne] = useState([]);
   const [imageTwo, setImageTwo] = useState([]);
   const [imageThree, setImageThree] = useState([]);
   const [imageFour, setImageFour] = useState([]);
   const [size, setSize] = useState([]);
+  const cart = useSelector(state => state.cart.cart)
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (location.search) {
@@ -37,7 +40,7 @@ const ProductPage = ({cart, setCart}) => {
     if (location.search) {
       const id = qs.parse(location.search.substring(1)).id;
       if(!cart.includes(id)){
-        setCart([...cart, id])
+        dispatch(setCart([...cart, id]))
       }
     }
   }

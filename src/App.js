@@ -12,8 +12,10 @@ import Nav from "./components/layot/nav/Nav";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import Basket from "./components/layot/basket/basket";
 import {useSelector} from "react-redux";
+import Checkout from "./pages/Checkout/Checkout";
+import Error from "./pages/Error/Error";
+import AboutUs from "./pages/AboutUs/AboutUs";
 
-export const ChooseProductSize = createContext();
 export const BasketOpen = createContext();
 
 
@@ -48,6 +50,9 @@ const App = () => {
               path="/product"
               element={<ProductPage />}
             />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/about_us" element={<AboutUs />} />
+            <Route path="/error" element={<Error />} />
           </Routes>
         <Insta />
         <Footer />

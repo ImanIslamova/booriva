@@ -24,7 +24,9 @@ const Insta = () => {
                 </div>
             </div>
             <div className={`${styles.insta__item} ${styles.insta_two}`}>
-                <img src={instaTwo} alt = 'фото'></img>               
+                <div className={styles.abaldet}>
+                    <img src={instaTwo} alt = 'фото'></img>               
+                </div>
             </div>
             <div className={styles.insta__item}>
                 <div className={`${styles.insta__minis} ${styles.insta__minis__second}`}>

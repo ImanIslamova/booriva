@@ -90,8 +90,8 @@ const Basket = ({cart, setCart}) =>{
                         <span className={styles.basketTextBigPrice}>{allPrice} ₴</span>
                     </div>
                 </div>
-                <Link to="/checkout" className={styles.baskets_button}>
-                    <Button text = "ОФОРМИТЬ ЗАКАЗ"/>
+                <Link to="/checkout" className={styles.baskets_button} onClick={() => setIsBasketOpen(false)}>
+                    <Button text = "ОФОРМИТЬ ЗАКАЗ" />
                 </Link>
             </div>
         </div>

@@ -7,3 +7,32 @@
     }
 
 }
+
+.basket{
+    width: 40px;
+}
+
+.basketIcon:hover {
+    color: #FDA3C4;
+}
+
+.cartNumber{
+    position: absolute;
+    right: 0;
+    top: 8px;
+    left: auto;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 100%;
+    overflow: hidden;
+    background: #1F1F1F;
+    border-color: #1F1F1F;
+    color: #fff;
+}
+
+.cartNumber:hover {
+    color: #FDA3C4;
+}

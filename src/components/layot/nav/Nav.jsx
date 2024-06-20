@@ -7,14 +7,10 @@ import Search from "./search/Search";
 import Wishlist from "./wishlist/Wishlist";
 import SubMenu from "./menu/subMenu/SubMenu";
 import MenuBottom from "./menu/menuBottom/menuBottom";
+import Searcher from "../../layot/search/searcher";
 
 
 import styles from "./../../../components/layot/nav/Nav.module.css";
-import Searchs from "../searcher/searcher";
-import Searcher from "../searcher/searcher";
-
-
-
 
 
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styles from './searcher.module.sass'
 
 
-const Searcher = ({setIsBasketOpen}) =>{
+const Searcher = () =>{
   const [findProducts, setFindProducts] = useState("");
   const getFindProducts = (event) => {
     setFindProducts(event.target.value);
@@ -14,7 +14,7 @@ const Searcher = ({setIsBasketOpen}) =>{
     <div className={styles.searcher}>
       <form>
         <div className={styles.search}>
-          <div className={styles.searchBtn} onClick={() => setIsBasketOpen(true)}></div>
+          <div className={styles.searchBtn}></div>
           <input
             type="text"
             className={styles.input}

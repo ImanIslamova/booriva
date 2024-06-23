@@ -7,12 +7,11 @@ export const cartSlice = createSlice({
       ? JSON.parse(localStorage.getItem("cart"))
       : [],
   },
+
   reducers: {
     setCart: (state, { payload }) => {
       state.cart = payload;
     },
-
-  
   },
 });
 

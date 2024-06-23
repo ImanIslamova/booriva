@@ -77,19 +77,29 @@
     width: calc( 70% - 50px )
     @media screen and (max-width: 800px)
         width: 100%
-
+        
+.optionsFlex
+    display: flex
+    gap: 100px
 .basket
     width: calc( 40% - 50px )
     @media screen and (max-width: 800px)
         display: none
 
 
-.clientDataSection,
-.deliverySection
+.titles,
+.clientDataSection
     display: flex
     gap: 30px
     justify-content: space-between
     margin-bottom: 55px
+    flex-direction: column
+
+.titles
+    // justify-content: space-around
+
+.title2
+    margin-bottom: 100px
 
 .input,
 .address

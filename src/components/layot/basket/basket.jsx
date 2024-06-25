@@ -9,6 +9,10 @@ import Clear from '../../../assets/icons/Clear';
 
 
 import styles from './basket.module.sass'
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setSize, chooseSizes } from "../../../redux/sizeSlice/sizeSlice";
+
 
 
 
@@ -16,6 +20,21 @@ const Basket = ({cart, setCart}) =>{
     const [allPrice, setAllPrice]=useState(0)
     const [products, setProducts] = useState([])
     const {isBasketOpen, setIsBasketOpen} = useContext(BasketOpen)
+
+    //попробую добавить выбор размера в корзину
+
+    const size = useSelector(state => state.size);
+    // const dispatch = useDispatch();
+    // const [checked, setChecked] = useState(false);
+    // const handleChange = (event) => {
+    //     setChecked(event.target.checked);
+    // };
+
+    // const chooseSize = (event) => {
+    //     dispatch(chooseSizes(event.target.value));
+    // }
+
+    //попробовала, не получилось))) 
 
     const sendData = async (cart, i, products) => {
         if(i < cart.length){
@@ -30,7 +49,6 @@ const Basket = ({cart, setCart}) =>{
             return []
         }
     }
-
 
     useEffect(() => {
         const items = sendData(cart, 0, [])

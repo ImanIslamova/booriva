@@ -6,11 +6,11 @@ import Menu from "./menu/Menu";
 import Search from "./search/Search";
 import Wishlist from "./wishlist/Wishlist";
 import SubMenu from "./menu/subMenu/SubMenu";
+import MenuBottom from "./menu/menuBottom/menuBottom";
+import Searcher from "../../layot/search/searcher";
+
 
 import styles from "./../../../components/layot/nav/Nav.module.css";
-
-
-
 
 
 
@@ -31,8 +31,10 @@ const Nav = ({setIsBasketOpen}) => {
                 </div>
                 <div className={styles.menu}>
                     <Menu setIsShow={setIsShow} setMenuId={setMenuId}/>
+                    <MenuBottom/>
                 </div>
                 <SubMenu isShow={isShow} setIsShow={setIsShow} menuId={menuId} />
+                <Searcher />
             </div>
         </div>
 

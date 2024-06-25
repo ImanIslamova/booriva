@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { getProductData } from "../../../services/product";
 import { BasketOpen } from '../../../App';
+import {useDispatch, useSelector} from "react-redux";
+import { setCart } from '../../../redux/cartSlice/cartSlice';
 import Close from '../../../assets/icons/close';
 import Button from '../../buttons/Button';
 import Clear from '../../../assets/icons/Clear';
@@ -16,9 +18,12 @@ import { setSize, chooseSizes } from "../../../redux/sizeSlice/sizeSlice";
 
 
 
-const Basket = ({cart, setCart}) =>{
+
+const Basket = () =>{
+    const cart = useSelector(state => state.cart.cart);
     const [allPrice, setAllPrice]=useState(0)
     const [products, setProducts] = useState([])
+    const dispatch = useDispatch()
     const {isBasketOpen, setIsBasketOpen} = useContext(BasketOpen)
 
     //попробую добавить выбор размера в корзину
@@ -82,10 +87,10 @@ const Basket = ({cart, setCart}) =>{
                             <div className={styles.description}>
                                 <div className={styles.description_name}>{item.name}</div>
                                 <div className={styles.description_size}>S-M</div>
-                                <div className={styles.description_price}>{item.price}</div>
+                                <div className={styles.description_price}>{item.price + ' ₴'}</div>
                             </div>
                             <div className={styles.btnClear}>
-                                <div onClick={() => setCart(cart.filter((id) => id !== item.id))}>
+                                <div onClick={() => dispatch(setCart(cart.filter((id) => id !== item.id)))}>
                                     <Clear/>
                                 </div>
                             </div>

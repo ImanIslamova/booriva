@@ -11,13 +11,7 @@ import Clear from '../../../assets/icons/Clear';
 
 
 import styles from './basket.module.sass'
-import { useDispatch, useSelector } from 'react-redux';
-
 import { setSize, chooseSizes } from "../../../redux/sizeSlice/sizeSlice";
-
-
-
-
 
 const Basket = () =>{
     const cart = useSelector(state => state.cart.cart);

@@ -68,8 +68,6 @@ const Checkout = () => {
     }));
   };
 
-  console.log(wayId);
-
   const [user, setUser] = useState({
     userName: firstName,
     userLastName: lastName,

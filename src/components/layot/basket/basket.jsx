@@ -20,21 +20,6 @@ const Basket = () =>{
     const dispatch = useDispatch()
     const {isBasketOpen, setIsBasketOpen} = useContext(BasketOpen)
 
-    //попробую добавить выбор размера в корзину
-
-    const size = useSelector(state => state.size);
-    // const dispatch = useDispatch();
-    // const [checked, setChecked] = useState(false);
-    // const handleChange = (event) => {
-    //     setChecked(event.target.checked);
-    // };
-
-    // const chooseSize = (event) => {
-    //     dispatch(chooseSizes(event.target.value));
-    // }
-
-    //попробовала, не получилось))) 
-
     const sendData = async (cart, i, products) => {
         if(i < cart.length){
             const data = await getProductData(cart[i])

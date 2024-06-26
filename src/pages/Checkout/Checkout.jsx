@@ -11,55 +11,45 @@ const Checkout = () => {
 
   const [isComplete, setIsComplete] = useState(false);
   const [firstName, setFirstName] = useState("");
-  const changeFirstName = (event) => {
-    setFirstName(event.target.value);
-  };
-
   const [lastName, setLastName] = useState("");
-  const changeLastName = (event) => {
-    setLastName(event.target.value);
-  };
-
   const [phoneNum, setPhoneNum] = useState("");
-  const changePhoneNum = (event) => {
-    setPhoneNum(event.target.value);
-  };
-
   const [email, setEmail] = useState("");
-  const changeEmail = (event) => {
-    setEmail(event.target.value);
-  };
-
   const [address, setAddress] = useState("");
-  const changeAddress = (event) => {
-    setAddress(event.target.value);
-  };
-
-  const [user, setUser] = useState({
-    userName: firstName,
-    userLastName: lastName,
-    userPhone: phoneNum,
-    userEmail: email,
-  });
-
-  // const user = ({
-  //   userName: firstName,
-  //   userLastName: lastName,
-  //   userPhone: phoneNum,
-  //   userEmail: email,
-  // });
-
   const [wayId, setWayId] = useState("почта");
   const changeWayId = (event) => {
     setWayId(event.target.value);
   };
 
-  const delivery = {
-    way: wayId,
-    address: address,
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser((prevUser) => ({
+      ...prevUser,
+      [name]: value,
+    }));
   };
+  
+  console.log(wayId);
+  
+  const [user, setUser] = useState({
+    userName: firstName,
+    userLastName: lastName,
+    userPhone: phoneNum,
+    userEmail: email,
+    way: wayId, //здесь короче у меня не получается, чтобы оно обновлялось в реальном времени
+    address: address
+  });
 
   const sendData = () => {
+    setUser({
+      userName: firstName,
+      userLastName: lastName,
+      userPhone: phoneNum,
+      userEmail: email,
+      way: wayId,
+      address: address
+    });
+
     fetch(
       "https://api.telegram.org/bot6452584114:AAERbOG2WM1dQqVveN6BkS2hUDIyL1k0gAw/sendMessage",
       {
@@ -70,32 +60,29 @@ const Checkout = () => {
         body: JSON.stringify({
           chat_id: "462291550",
           parse_mode: "html",
-          text:  `<b>Новый заказ:</b>
+          text: `<b>Новый заказ:</b>
           <b> Имя: </b>${user.userName}
           <b> Фамилия: </b>${user.userLastName}
+          <b> Номер телефона: </b> ${user.userPhone}
+          <b> E-mail: </b> ${user.userEmail}
+          <b> Способ доставки: </b>${user.way}
+          <b> Адрес: </b>${user.address}
 
           `,
         }),
       }
     )
       .then((res) => res.json())
-      .then((res) => (res.ok ? setIsComplete(true) : navigate('/error')));
+      .then((res) => (res.ok ? setIsComplete(true) : navigate("/error")));
 
-    setUser({
-      userName: firstName,
-      userLastName: lastName,
-      userPhone: phoneNum,
-      userEmail: email,
-    });
-    
-    console.log(user, delivery);
+    console.log(user);
     // console.log(isComplete);
   };
-  
-    useEffect(() => {
-      const newUser = user;
-      setUser(newUser);
-    }, [user]);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    sendData(user);
+  };
 
   return (
     <div className={styles.checkoutPage}>
@@ -151,44 +138,48 @@ const Checkout = () => {
               </div>
               <div className={styles.clientDataSection}>
                 <div className={styles.clientData}>
-                  <form className={styles.client}>
+                  <form className={styles.client} onSubmit={handleFormSubmit}>
                     <input
                       type="text"
                       className={styles.input}
-                      value={firstName}
-                      onChange={changeFirstName}
+                      value={user.userName}
+                      onChange={handleChange}
                       placeholder="Имя"
-                      required={true}
+                      name="userName"
+                      required
                     />
                     <input
                       type="text"
                       className={styles.input}
-                      value={lastName}
-                      onChange={changeLastName}
+                      value={user.userLastName}
+                      onChange={handleChange}
                       placeholder="Фамилия"
-                      required = 'true'
+                      name="userLastName"
+                      required
                     />
                     <input
                       type="text"
                       className={styles.input}
-                      value={phoneNum}
-                      onChange={changePhoneNum}
+                      value={user.userPhone}
+                      onChange={handleChange}
                       placeholder="+7 ( __ ) ________"
-                      required = 'true'
+                      name="userPhone"
+                      required
                     />
                     <input
                       type="text"
                       className={styles.input}
-                      value={email}
-                      onChange={changeEmail}
+                      value={user.userEmail}
+                      onChange={handleChange}
                       placeholder="E-mail"
-                      required = 'true'
+                      name="userEmail"
+                      required
                     />
                     <div>
                       <input
                         type="radio"
-                        name="delivery"
-                        value={"почта"}
+                        name="почта"
+                        value="почта"
                         className={styles.radio}
                         checked={wayId === "почта"}
                         onChange={changeWayId}
@@ -198,8 +189,8 @@ const Checkout = () => {
                     <div>
                       <input
                         type="radio"
-                        name="delivery"
-                        value={"самовывоз"}
+                        name="самовывоз"
+                        value="самовывоз"
                         className={styles.radio}
                         checked={wayId === "самовывоз"}
                         onChange={changeWayId}
@@ -212,13 +203,18 @@ const Checkout = () => {
                     <textarea
                       type="text"
                       className={styles.address}
-                      value={address}
-                      onChange={changeAddress}
+                      value={user.address}
+                      onChange={handleChange}
+                      name="address"
                       placeholder="Введите адрес:"
+                      required
                     />
-                    <div className={styles.button} onClick={sendData}>
+                    <button
+                      type="submit"
+                      className={styles.button}
+                    >
                       <Button text="Оформить заказ" />
-                    </div>
+                    </button>
                   </form>
                 </div>
               </div>

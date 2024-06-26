@@ -1,14 +1,54 @@
 import { useEffect, useState } from "react";
 
+import { useDispatch, useSelector } from "react-redux";
+import { setCart } from "../../redux/cartSlice/cartSlice";
+import Clear from "../../assets/icons/Clear";
+import { getProductData } from "../../services/product";
+
 import TitleOrder from "../../components/title/TitleOrder";
 import styles from "./checkout.module.sass";
+import stylesBasket from "../../components/layot/basket/basket.module.sass";
 import Button from "../../components/buttons/Button";
 import Title from "../../components/title/Title";
 import { Link, useNavigate, json } from "react-router-dom";
+import Basket from "../../components/layot/basket/basket";
 
 const Checkout = () => {
   const navigate = useNavigate();
+  ///Код корзины
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart);
+  const [allPrice, setAllPrice] = useState(0);
+  const [products, setProducts] = useState([]);
 
+  const sendDataCart = async (cart, i, products) => {
+    if (i < cart.length) {
+      const data = await getProductData(cart[i]);
+      products.push(data);
+      if (i < cart.length - 1) {
+        return sendDataCart(cart, i + 1, products);
+      } else {
+        return products;
+      }
+    } else {
+      return [];
+    }
+  };
+
+  useEffect(() => {
+    const items = sendDataCart(cart, 0, []);
+    items.then((res) => setProducts(res));
+  }, [cart]);
+
+  useEffect(() => {
+    let productsPrice = 0;
+    for (let i = 0; i < products.length; i++) {
+      productsPrice += Number(products[i].price);
+    }
+    setAllPrice(productsPrice);
+  }, [products]);
+
+  //////
   const [isComplete, setIsComplete] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -20,7 +60,6 @@ const Checkout = () => {
     setWayId(event.target.value);
   };
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prevUser) => ({
@@ -28,16 +67,16 @@ const Checkout = () => {
       [name]: value,
     }));
   };
-  
+
   console.log(wayId);
-  
+
   const [user, setUser] = useState({
     userName: firstName,
     userLastName: lastName,
     userPhone: phoneNum,
     userEmail: email,
     way: wayId, //здесь короче у меня не получается, чтобы оно обновлялось в реальном времени
-    address: address
+    address: address,
   });
 
   const sendData = () => {
@@ -47,7 +86,7 @@ const Checkout = () => {
       userPhone: phoneNum,
       userEmail: email,
       way: wayId,
-      address: address
+      address: address,
     });
 
     fetch(
@@ -67,6 +106,7 @@ const Checkout = () => {
           <b> E-mail: </b> ${user.userEmail}
           <b> Способ доставки: </b>${user.way}
           <b> Адрес: </b>${user.address}
+          <b> Заказ: </b>${products[0].name} по цене ${products[0].price} ID: ${products[0].id}
 
           `,
         }),
@@ -74,15 +114,13 @@ const Checkout = () => {
     )
       .then((res) => res.json())
       .then((res) => (res.ok ? setIsComplete(true) : navigate("/error")));
-
-    console.log(user);
-    // console.log(isComplete);
   };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
     sendData(user);
   };
+
 
   return (
     <div className={styles.checkoutPage}>
@@ -209,10 +247,7 @@ const Checkout = () => {
                       placeholder="Введите адрес:"
                       required
                     />
-                    <button
-                      type="submit"
-                      className={styles.button}
-                    >
+                    <button type="submit" className={styles.button}>
                       <Button text="Оформить заказ" />
                     </button>
                   </form>
@@ -234,8 +269,66 @@ const Checkout = () => {
             </div>
           </div>
           <div className={styles.basket}>
-            Здесь у нас воображаемая корзина
-            {/* <Basket cart={cart} setCart={setCart}/> */}
+            <div>
+              <h2 className={stylesBasket.boxTitle}>КОРЗИНА</h2>
+              <div className={stylesBasket.box}>
+                <div className={stylesBasket.products}>
+                  {products.map((item) => (
+                    <div className={stylesBasket.products_block}>
+                      <div
+                        className={stylesBasket.products__image}
+                        style={{ backgroundImage: `URL(${item.images[0]})` }}
+                      ></div>
+                      <div className={stylesBasket.description}>
+                        <div className={stylesBasket.description_name}>
+                          {item.name}
+                        </div>
+                        <div className={stylesBasket.description_size}>S-M</div>
+                        <div className={stylesBasket.description_price}>
+                          {item.price + " ₴"}
+                        </div>
+                      </div>
+                      <div className={stylesBasket.btnClear}>
+                        <div
+                          onClick={() =>
+                            dispatch(
+                              setCart(cart.filter((id) => id !== item.id))
+                            )
+                          }
+                        >
+                          <Clear />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {}
+              <div className={stylesBasket.block}>
+                <div className={stylesBasket.block_one}>
+                  <span className={stylesBasket.basketTextSmall}>
+                    Cумма заказа:
+                  </span>
+                  <span className={stylesBasket.basketTextBig}>
+                    {allPrice} ₴
+                  </span>
+                </div>
+                <div className={stylesBasket.block_one}>
+                  <span className={stylesBasket.basketTextSmall}>
+                    Стоимость доставки:
+                  </span>
+                  <span className={stylesBasket.basketTextBig}>бесплатно</span>
+                </div>
+                <div className={stylesBasket.block_two}>
+                  <span className={stylesBasket.basketTextPrice}>
+                    К оплате: . . . . . . . . . .{" "}
+                  </span>
+                  <span className={stylesBasket.basketTextBigPrice}>
+                    {allPrice} ₴
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

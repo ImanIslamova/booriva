@@ -13,8 +13,12 @@ import Basket from "./components/layot/basket/basket";
 import Checkout from "./pages/Checkout/Checkout";
 import Error from "./pages/Error/Error";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import ResultList from "./components/layot/search/resultList/resultList";
+import Searcher from "./components/layot/search/searcher";
 
 import "./index.sass";
+
+
 
 export const BasketOpen = createContext();
 
@@ -22,6 +26,7 @@ export const BasketOpen = createContext();
 const App = () => {
   const wish = useSelector(state => state.wish.wish);
   const cart = useSelector(state => state.cart.cart);
+  const [products, setProducts] = useState([])
 
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   
@@ -40,10 +45,12 @@ const App = () => {
     <div>
     <BasketOpen.Provider value={{isBasketOpen, setIsBasketOpen}}>
       <div className={`${isBasketOpen && "no-scroll"}`}>
-        <Basket/>
-          <Nav setIsBasketOpen={setIsBasketOpen} />
+        <Basket  products={products} setProducts={setProducts}/>
+        {/* <Searcher/> */}
+          <Nav setIsBasketOpen={setIsBasketOpen} productsLength={products?.length} />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/resultList" element={<ResultList />} />
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/wishlist" element={<WishList />} />
             <Route

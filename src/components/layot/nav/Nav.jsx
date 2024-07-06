@@ -14,8 +14,9 @@ import styles from "./../../../components/layot/nav/Nav.module.css";
 
 
 
-const Nav = ({setIsBasketOpen}) => {
+const Nav = ({setIsBasketOpen, productsLength}) => {
     const [isShow, setIsShow] = useState(false)
+    const [showSearcher, setShowSearcher] = useState(false);
     const [menuId, setMenuId] = useState(0)
     return (
         <div className={styles.nav}>
@@ -23,10 +24,10 @@ const Nav = ({setIsBasketOpen}) => {
                 <div className={styles.blocktwo}>
                     <Contacts />
                     <BoorivaLogo />
-                    <Search />
+                    <Search showSearcher={showSearcher} setShowSearcher={setShowSearcher} />
                     <div className={styles.blockthree}>
                         <Wishlist />
-                        <Basket setIsBasketOpen={setIsBasketOpen}/>
+                        <Basket setIsBasketOpen={setIsBasketOpen} productsLength={productsLength} />
                     </div>
                 </div>
                 <div className={styles.menu}>
@@ -34,7 +35,7 @@ const Nav = ({setIsBasketOpen}) => {
                     <MenuBottom/>
                 </div>
                 <SubMenu isShow={isShow} setIsShow={setIsShow} menuId={menuId} />
-                <Searcher />
+                    <Searcher showSearcher={showSearcher} setShowSearcher={setShowSearcher} />
             </div>
         </div>
 

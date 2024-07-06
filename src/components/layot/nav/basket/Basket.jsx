@@ -3,16 +3,14 @@ import BasketIcon from "../../../../assets/icons/BasketIcon";
 
 import styles from "./Basket.module.css";
 
-const Basket = ({setIsBasketOpen}) => {
-  
+const Basket = ({setIsBasketOpen, productsLength}) => {
   
   return (
     <span className={styles.basket} onClick={() => setIsBasketOpen(true)}>
-        <BasketIcon/>
-          <span class={styles.cartNumber}>0</span>
-      </span>
+      <BasketIcon/>
+      <span class={styles.cartNumber}>{productsLength}</span>
+    </span>
 
-    )
-
+  )
 }
 export default Basket

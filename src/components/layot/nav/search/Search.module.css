@@ -10,6 +10,7 @@
     align-items: center;
     height: 24px;
     margin-left: 100px;
+    cursor: pointer;
     @media (max-width: 390px){
         padding-right: 10px;
         width: 40px;

@@ -2,13 +2,13 @@
 import SearchIcon from "../../../../assets/icons/SearchIcon";
 import styles from "./../../../../components/layot/nav/search/Search.module.css";
 
-const Search = () => {
-
+const Search = ({showSearcher, setShowSearcher}) => {
+    
     return (
-        <a href="" className={styles.search}>
+        <div className={styles.search} onClick={() => setShowSearcher(!showSearcher)}>
             <SearchIcon />
-        <div className={styles.searchText}>Поиск</div>
-        </a>
+            <div className={styles.searchText}>Поиск</div>
+        </div>
 
     )
 

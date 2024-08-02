@@ -35,7 +35,7 @@ const Product = ({ id, name, price, photo, widthImg, heightImg, link, heart }) =
       <Link to={link}>
       <div className={styles.product__options}>
         <p className={styles.product__name}>
-          {name.length < 25 ? name : name.substr(0, 20) + "..."}
+          {/* {name.length < 25 ? name : name?.substring(0, 20) + "..."} */}
         </p>
         <p className={styles.product__price}>{price}</p>
       </div>

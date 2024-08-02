@@ -8,8 +8,12 @@ export const getCatalogData = async (id) => {
     }
 };
 
-export const getCatalogDataAll = async () => {
-    let res = await fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product`);
+export const getCatalogDataAll = async (search) => {
+    let res = await fetch(
+        search
+        ? `https://6569c6cede53105b0dd7a33a.mockapi.io/product?name=${search}`
+        : `https://6569c6cede53105b0dd7a33a.mockapi.io/product`
+    );
     res = await res.json();
     return res;
 };
